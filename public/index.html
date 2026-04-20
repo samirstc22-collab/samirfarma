@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prof. Samir Tannuri — Pesquisador CNPq, Consultor Industrial e Speaker. P&D cosmético para indústrias, marcas e farmácias magistrais. Missões Paris, Amsterdam e Japão.">
+<meta name="keywords" content="P&D cosmético, consultoria farmacotécnica, peelings químicos, peptídeos biomiméticos, dermatologia regenerativa, farmácia magistral, indústria cosmética">
+<meta property="og:title" content="Clube de Fórmulas — Prof. Samir Tannuri">
+<meta property="og:description" content="Ciência que vira fórmula. Fórmula que vira resultado.">
+<title>Clube de Fórmulas — Prof. Samir Tannuri | Pesquisador · Consultor Industrial · Speaker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0B1D35; --navy-deep:#071629; --navy-mid:#132B4D;
+  --teal:#0A8F9E; --teal-light:#12B5C8; --teal-glow:rgba(10,143,158,0.12);
+  --copper:#C0854A; --copper-light:#D4A76A; --copper-deep:#A86F38;
+  --copper-glow:rgba(192,133,74,0.15);
+  --gold:#D4AF37;
+  --white:#FFFFFF; --off-white:#FAFAF8; --cream:#F5F0E8; --sand:#EDE4D6;
+  --dark:#0F0F0F; --body:#3A3A3A; --muted:#8A8A8A; --border:#E8E3DB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;color:var(--body);background:var(--white);overflow-x:hidden}
+::selection{background:rgba(192,133,74,0.25)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:'Outfit',sans-serif;cursor:pointer}
+.serif{font-family:'Instrument Serif',serif;font-weight:400}
+
+/* Animations */
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity 0.85s cubic-bezier(0.22,1,0.36,1),transform 0.85s cubic-bezier(0.22,1,0.36,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ─── NAV ─── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all 0.4s ease;padding:20px 0}
+.nav.scrolled{background:rgba(255,255,255,0.96);backdrop-filter:blur(20px) saturate(1.2);border-bottom:1px solid var(--border);padding:12px 0}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}
+.nav-logo-icon{width:42px;height:42px;border-radius:10px;border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:22px;color:#fff;transition:all 0.3s;background:rgba(255,255,255,0.04)}
+.nav.scrolled .nav-logo-icon{border-color:var(--copper);color:var(--copper);background:var(--copper-glow)}
+.nav-brand{font-family:'Instrument Serif',serif;font-size:18px;color:#fff;line-height:1.1;transition:color 0.3s;letter-spacing:0.3px}
+.nav-sub{font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;margin-top:2px;font-weight:500}
+.nav.scrolled .nav-brand{color:var(--navy)}
+.nav.scrolled .nav-sub{color:var(--muted)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-link{background:none;border:none;color:#fff;font-size:13.5px;font-weight:500;opacity:0.82;transition:all 0.2s;padding:0;letter-spacing:0.2px}
+.nav-link:hover{opacity:1}
+.nav.scrolled .nav-link{color:var(--navy)}
+.nav-cta{background:linear-gradient(135deg,var(--copper),var(--copper-deep));border:none;border-radius:8px;padding:11px 24px;color:#fff;font-weight:600;font-size:13px;box-shadow:0 4px 20px rgba(192,133,74,0.3);transition:all 0.25s;letter-spacing:0.3px}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(192,133,74,0.4)}
+.nav-mobile{display:none;background:none;border:none;color:#fff;padding:4px}
+.nav.scrolled .nav-mobile{color:var(--navy)}
+.nav-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:20px 32px 28px;border-bottom:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,0.1);flex-direction:column;gap:16px}
+.nav-dropdown.open{display:flex}
+.nav-drop-link{background:none;border:none;color:var(--navy);font-size:15.5px;text-align:left;padding:4px 0;font-weight:500}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 55%,#050E1B 100%);position:relative;overflow:hidden}
+.hero-ornament-1{position:absolute;top:10%;right:-8%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(10,143,158,0.14),transparent 70%);filter:blur(40px)}
+.hero-ornament-2{position:absolute;bottom:-10%;left:-5%;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(192,133,74,0.1),transparent 70%);filter:blur(40px)}
+.mol-bg{position:absolute;inset:0;opacity:0.05;pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;padding:160px 32px 100px;width:100%;position:relative;z-index:2}
+.hero-grid{display:flex;gap:72px;align-items:center;flex-wrap:wrap}
+.hero-text{flex:1 1 540px;min-width:280px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;background:rgba(10,143,158,0.12);border:1px solid rgba(10,143,158,0.25);border-radius:100px;padding:8px 18px;margin-bottom:32px}
+.hero-kicker-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2.5s ease-in-out infinite}
+.hero-kicker-text{color:var(--teal-light);font-size:11.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.hero h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,5.8vw,68px);line-height:1.05;color:#fff;margin:0 0 24px;letter-spacing:-1px}
+.hero h1 .copper{background:linear-gradient(135deg,var(--copper-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .teal{background:linear-gradient(135deg,var(--teal-light),#7FE5EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:17px;color:rgba(255,255,255,0.58);line-height:1.75;max-width:520px;margin:0 0 36px;font-weight:400}
+.hero-form{display:flex;gap:10px;max-width:460px;flex-wrap:wrap}
+.hero-input{flex:1 1 220px;padding:15px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:#fff;font-size:14px;font-family:'Outfit',sans-serif;outline:none;transition:all 0.2s}
+.hero-input:focus{border-color:var(--copper);background:rgba(255,255,255,0.08)}
+.hero-input::placeholder{color:rgba(255,255,255,0.38)}
+.hero-btn{background:linear-gradient(135deg,var(--copper),var(--copper-deep));border:none;border-radius:10px;padding:15px 28px;color:#fff;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 6px 24px rgba(192,133,74,0.3);transition:all 0.2s;letter-spacing:0.3px}
+.hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(192,133,74,0.45)}
+.hero-note{font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;letter-spacing:0.2px}
+
+/* Hero photo */
+.hero-visual{flex:0 1 420px;min-width:280px;position:relative}
+.hero-photo-frame{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1)}
+.hero-photo{width:100%;display:block}
+.hero-photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(7,22,41,0.6));pointer-events:none}
+.hero-badge-authority{position:absolute;top:20px;left:20px;background:rgba(11,29,53,0.85);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:6px 14px;font-size:11px;font-weight:600;color:var(--copper-light);letter-spacing:1px;text-transform:uppercase;z-index:2}
+.hero-stats{position:absolute;bottom:-28px;left:-20px;right:-20px;background:rgba(11,29,53,0.94);backdrop-filter:blur(16px);border-radius:18px;padding:22px 26px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 16px 48px rgba(0,0,0,0.4);z-index:3}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat-num{font-family:'Instrument Serif',serif;font-size:24px;color:var(--copper-light);line-height:1;display:block}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.42);margin-top:4px;line-height:1.3}
+
+/* ─── TRUST MARQUEE ─── */
+.trust{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden}
+.trust-track{display:flex;gap:56px;animation:marquee 42s linear infinite;white-space:nowrap;width:max-content}
+.trust-item{display:flex;align-items:center;gap:14px}
+.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--copper);flex-shrink:0}
+.trust-text{font-size:11.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-weight:600}
+
+/* ─── BIG STATS ─── */
+.big-stats{background:var(--white);padding:90px 32px;border-bottom:1px solid var(--border)}
+.big-stats-inner{max-width:1200px;margin:0 auto}
+.big-stats-title{text-align:center;margin-bottom:56px}
+.big-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px}
+.big-stat{text-align:center;padding:28px 20px;border-right:1px solid var(--border);transition:transform 0.3s}
+.big-stat:last-child{border-right:none}
+.big-stat-num{font-family:'Instrument Serif',serif;font-size:56px;color:var(--navy);line-height:1;margin-bottom:10px;background:linear-gradient(135deg,var(--navy),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.big-stat-label{font-size:12.5px;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;font-weight:600;line-height:1.4}
+
+/* ─── SECTION BASE ─── */
+.section{padding:110px 32px;position:relative}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:64px}
+.section-tag{font-size:11.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;display:inline-block;margin-bottom:14px}
+.section-title{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,4vw,44px);color:var(--navy);margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
+.section-title.light{color:#fff}
+.section-desc{font-size:15px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.7}
+
+/* ─── ABOUT ─── */
+.about{background:var(--white)}
+.about-grid{display:flex;gap:72px;align-items:flex-start;flex-wrap:wrap}
+.about-photos{flex:0 0 360px;min-width:280px}
+.about-photo-wrap{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.12)}
+.about-photo{width:100%;display:block}
+.about-card{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border-radius:14px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.12)}
+.about-speaker-wrap{margin-top:18px;border-radius:14px;overflow:hidden;position:relative}
+.about-speaker{width:100%;display:block;opacity:0.95;transition:opacity 0.3s}
+.about-speaker-wrap:hover .about-speaker{opacity:1}
+.about-speaker-caption{position:absolute;bottom:12px;left:16px;right:16px;font-size:11px;color:#fff;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);padding:8px 12px;border-radius:8px;text-align:center;letter-spacing:0.3px}
+.about-text{flex:1;min-width:300px}
+.about-text p{font-size:15.5px;line-height:1.85;margin-bottom:18px;color:var(--body)}
+.about-text strong{color:var(--navy);font-weight:600}
+.check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:28px 0}
+.check-item{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--dark);font-weight:500}
+.quote-box{border-left:3px solid var(--copper);padding:18px 22px;background:var(--copper-glow);border-radius:0 12px 12px 0;margin-top:28px}
+.quote-text{font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;color:var(--navy);line-height:1.6;margin-bottom:6px}
+
+/* ─── DUAL EXPERTISE ─── */
+.dual{background:linear-gradient(170deg,var(--navy),var(--navy-deep));position:relative;overflow:hidden}
+.dual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px}
+.dual-card{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:44px 38px;transition:all 0.3s;position:relative;overflow:hidden}
+.dual-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--copper),transparent);opacity:0;transition:opacity 0.3s}
+.dual-card:hover{background:rgba(255,255,255,0.06);transform:translateY(-4px)}
+.dual-card:hover::before{opacity:1}
+.dual-badge{display:inline-block;background:rgba(192,133,74,0.15);color:var(--copper-light);font-size:10.5px;font-weight:700;padding:5px 12px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.dual-title{font-family:'Instrument Serif',serif;font-size:28px;color:#fff;margin-bottom:16px;line-height:1.2}
+.dual-years{font-family:'Instrument Serif',serif;font-size:16px;color:var(--copper-light);margin-bottom:20px;letter-spacing:0.5px}
+.dual-desc{font-size:14.5px;color:rgba(255,255,255,0.58);line-height:1.75;margin-bottom:24px}
+.dual-list{display:flex;flex-direction:column;gap:12px}
+.dual-list-item{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.55}
+.dual-list-icon{color:var(--teal-light);flex-shrink:0;margin-top:2px}
+
+/* ─── MISSIONS INTERNATIONAL ─── */
+.missions{background:var(--off-white)}
+.missions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:12px}
+.mission-card{background:var(--white);border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:all 0.4s;display:flex;flex-direction:column}
+.mission-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(11,29,53,0.12);border-color:rgba(192,133,74,0.3)}
+.mission-visual{height:160px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mission-paris{background:linear-gradient(135deg,#1a1a2e,#0f3460,#16213e)}
+.mission-amsterdam{background:linear-gradient(135deg,#2d4a3e,#1e3a5f,#0f4c75)}
+.mission-japan{background:linear-gradient(135deg,#3d1f3d,#1a1a2e,#2d1b4e)}
+.mission-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.1),transparent 60%)}
+.mission-flag{position:relative;z-index:2;font-family:'Instrument Serif',serif;font-size:56px;color:rgba(255,255,255,0.95);letter-spacing:3px;text-transform:uppercase}
+.mission-year{position:absolute;top:18px;right:20px;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:4px 12px;font-size:11px;color:#fff;font-weight:600;letter-spacing:1px;z-index:3}
+.mission-content{padding:28px 30px;flex:1;display:flex;flex-direction:column}
+.mission-location{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.mission-title{font-family:'Instrument Serif',serif;font-size:22px;color:var(--navy);margin-bottom:14px;line-height:1.2}
+.mission-desc{font-size:13.5px;color:var(--body);line-height:1.7;margin-bottom:18px;flex:1}
+.mission-tags{display:flex;flex-wrap:wrap;gap:6px}
+.mission-tag{background:var(--copper-glow);color:var(--copper-deep);font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:0.3px}
+
+/* ─── SCIENCE ─── */
+.science{background:linear-gradient(170deg,var(--navy),var(--navy-deep));overflow:hidden}
+.science-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
+.science-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:40px 36px;transition:all 0.3s;position:relative}
+.science-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(192,133,74,0.25)}
+.science-card-tag{display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.science-card-tag-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:16px;font-weight:700}
+.science-icon-peer{background:rgba(10,143,158,0.15);color:var(--teal-light);border:1px solid rgba(10,143,158,0.3)}
+.science-icon-inn{background:rgba(192,133,74,0.15);color:var(--copper-light);border:1px solid rgba(192,133,74,0.3)}
+.science-card-tag-text{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.science-card h3{font-family:'Instrument Serif',serif;font-size:24px;color:#fff;margin-bottom:14px;line-height:1.25;font-weight:400}
+.science-card-meta{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:22px;font-style:italic}
+.science-metrics{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.metric{text-align:left}
+.metric-num{font-family:'Instrument Serif',serif;font-size:26px;line-height:1;display:block}
+.metric-label{font-size:10.5px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+.visia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.visia-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px 16px;text-align:center}
+.visia-num{font-family:'Instrument Serif',serif;font-size:32px;line-height:1;margin-bottom:6px}
+.visia-label{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;line-height:1.3}
+.science-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(10,143,158,0.18);border:1px solid rgba(10,143,158,0.35);border-radius:10px;padding:12px 22px;color:var(--teal-light);font-size:13.5px;font-weight:600;transition:all 0.2s;letter-spacing:0.3px}
+.science-btn:hover{background:rgba(10,143,158,0.25);transform:translateY(-1px)}
+
+/* ─── SPEAKER ─── */
+.speaker{background:var(--white)}
+.speaker-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.speaker-photo{border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(11,29,53,0.15);position:relative}
+.speaker-photo img{width:100%;display:block}
+.speaker-photo-badge{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:10px 16px;color:#fff}
+.speaker-photo-badge-title{font-family:'Instrument Serif',serif;font-size:15px}
+.speaker-photo-badge-sub{font-size:11px;color:rgba(255,255,255,0.7);margin-top:2px;letter-spacing:0.5px}
+.speaker-list{display:flex;flex-direction:column;gap:16px}
+.speaker-item{display:flex;gap:20px;padding:20px 22px;background:var(--off-white);border:1px solid var(--border);border-radius:14px;transition:all 0.3s}
+.speaker-item:hover{border-color:var(--copper);background:var(--white);box-shadow:0 6px 20px rgba(0,0,0,0.05)}
+.speaker-item-year{font-family:'Instrument Serif',serif;font-size:22px;color:var(--copper);min-width:72px;line-height:1;padding-top:2px}
+.speaker-item-body{flex:1}
+.speaker-item-title{font-size:15px;color:var(--navy);font-weight:600;margin-bottom:4px;line-height:1.3}
+.speaker-item-desc{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ─── CONSULTORIA ─── */
+.consult{background:var(--off-white)}
+.consult-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.tier-card{background:var(--white);border-radius:18px;padding:34px 30px;height:100%;display:flex;flex-direction:column;transition:all 0.3s;position:relative;overflow:hidden}
+.tier-card.featured{border:2px solid var(--copper);box-shadow:0 12px 44px rgba(192,133,74,0.15)}
+.tier-card:not(.featured){border:1px solid var(--border)}
+.tier-card:not(.featured):hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-4px);border-color:rgba(192,133,74,0.3)}
+.tier-badge{position:absolute;top:16px;right:16px;background:var(--copper);border-radius:100px;padding:4px 12px;font-size:10px;font-weight:700;color:#fff;letter-spacing:0.8px;text-transform:uppercase}
+.tier-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-family:'Instrument Serif',serif;font-size:24px;font-weight:700}
+.tier-name{font-family:'Instrument Serif',serif;font-size:23px;font-weight:400;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.tier-desc{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.tier-list{flex:1;display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.tier-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.55;color:var(--body)}
+.tier-btn{border-radius:10px;padding:14px 22px;font-weight:600;font-size:13.5px;width:100%;transition:all 0.2s;text-align:center;letter-spacing:0.3px}
+.tier-btn.primary{background:var(--copper);border:none;color:#fff;box-shadow:0 4px 16px rgba(192,133,74,0.25)}
+.tier-btn.primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(192,133,74,0.35)}
+.tier-btn.secondary{background:transparent;border:1.5px solid var(--border);color:var(--navy)}
+.tier-btn.secondary:hover{border-color:var(--copper);color:var(--copper)}
+
+/* ─── PRODUCT COVERS ─── */
+.products{background:var(--white)}
+.tabs{display:flex;gap:8px;justify-content:center;margin-bottom:44px;flex-wrap:wrap}
+.tab-btn{background:transparent;border:1px solid var(--border);border-radius:100px;padding:9px 20px;font-size:12.5px;font-weight:500;transition:all 0.2s;color:var(--body)}
+.tab-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.product-card{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(0,0,0,0.1);border-color:rgba(192,133,74,0.3)}
+.product-cover{aspect-ratio:3/4;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:24px 22px;color:#fff}
+.product-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1) 0%,transparent 50%,rgba(0,0,0,0.3));pointer-events:none}
+.product-cover-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start}
+.product-cover-brand{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;opacity:0.85;font-weight:600}
+.product-cover-year{font-family:'Instrument Serif',serif;font-size:12px;opacity:0.7}
+.product-cover-bottom{position:relative;z-index:2}
+.product-cover-category{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;opacity:0.8;margin-bottom:10px}
+.product-cover-title{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.15;margin-bottom:8px;font-weight:400;letter-spacing:-0.3px}
+.product-cover-author{font-size:11.5px;opacity:0.75;font-weight:500;letter-spacing:0.3px}
+.product-cover-line{width:36px;height:2px;background:rgba(255,255,255,0.5);margin-bottom:10px}
+.product-cover-ornament{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);opacity:0.08;font-family:'Instrument Serif',serif;font-size:160px;line-height:1;font-weight:700;z-index:1;pointer-events:none}
+/* cover variants */
+.cover-regen{background:linear-gradient(160deg,#1a4d5c,#0b1d35 70%,#050e1b)}
+.cover-melasma{background:linear-gradient(160deg,#6b2737,#2d1b2d 60%,#0f0818)}
+.cover-peptides{background:linear-gradient(160deg,#1e4a6b,#0f2a4a 60%,#050e1b)}
+.cover-cicatriz{background:linear-gradient(160deg,#3d5a3d,#1e3a2b 60%,#0a1a14)}
+.cover-veiculos{background:linear-gradient(160deg,#5c4d3d,#2d2418 60%,#0f0a05)}
+.cover-bases{background:linear-gradient(160deg,#4a3d5c,#241d38 60%,#0e0a1a)}
+.cover-terapeutico{background:linear-gradient(160deg,#2d4a5c,#1a2d3d 60%,#050e1b)}
+.cover-clareadores{background:linear-gradient(160deg,#7a5c3d,#3d2d1a 60%,#1a0f05)}
+.cover-growth{background:linear-gradient(160deg,#2d5c4d,#1a3d2d 60%,#05140a)}
+.cover-atual{background:linear-gradient(160deg,#4a2d5c,#2d1a3d 60%,#100518)}
+.cover-curso{background:linear-gradient(160deg,#c0854a,#8b5a2b 60%,#3d2514)}
+.cover-peelings{background:linear-gradient(160deg,#5c3d3d,#3d1f1f 60%,#1a0a0a)}
+.product-info{padding:22px 22px 24px;border-top:1px solid var(--border)}
+.product-info-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.product-info-tag{font-size:10.5px;font-weight:600;padding:3px 10px;border-radius:6px;letter-spacing:0.5px;text-transform:uppercase}
+.product-info-price{font-size:14px;font-weight:700;color:var(--copper);font-family:'Outfit',sans-serif}
+.product-info-title{font-family:'Instrument Serif',serif;font-size:17px;font-weight:400;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.product-info-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px;min-height:38px}
+.product-info-link{display:inline-flex;align-items:center;gap:6px;color:var(--copper);font-size:12px;font-weight:600;letter-spacing:0.3px}
+.product-hot-dot{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px rgba(34,197,94,0.6);animation:pulse 2s infinite;z-index:5}
+
+/* ─── INDUSTRIES ─── */
+.industries{background:linear-gradient(170deg,#0f1f3a,var(--navy-deep));position:relative;overflow:hidden}
+.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:20px}
+.ind-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px 28px;transition:all 0.3s}
+.ind-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-3px);border-color:rgba(212,167,106,0.2)}
+.ind-card-num{font-family:'Instrument Serif',serif;font-size:48px;color:var(--copper-light);line-height:1;margin-bottom:14px;letter-spacing:-2px}
+.ind-card-title{font-size:14.5px;color:#fff;font-weight:600;margin-bottom:10px;letter-spacing:0.2px}
+.ind-card-desc{font-size:12.5px;color:rgba(255,255,255,0.55);line-height:1.65}
+
+/* ─── AUTHORITY CONTENT / BLOG ─── */
+.authority{background:var(--white)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:12px}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all 0.3s;cursor:pointer;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,0.08);border-color:rgba(192,133,74,0.3)}
+.blog-cover{aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:space-between;padding:24px 22px;color:#fff;position:relative;overflow:hidden}
+.blog-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.4));pointer-events:none}
+.blog-cover-label{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;position:relative;z-index:2;opacity:0.9}
+.blog-cover-title{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.2;position:relative;z-index:2}
+.blog-cover-formula{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Instrument Serif',serif;font-size:80px;opacity:0.1;letter-spacing:4px;z-index:1;font-weight:700}
+.blog-info{padding:22px 24px;flex:1;display:flex;flex-direction:column}
+.blog-meta{display:flex;gap:12px;font-size:11px;color:var(--muted);margin-bottom:10px;letter-spacing:0.5px;text-transform:uppercase;font-weight:600}
+.blog-meta-dot{color:var(--copper)}
+.blog-title{font-family:'Instrument Serif',serif;font-size:17px;color:var(--navy);margin-bottom:10px;line-height:1.3;font-weight:400}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:14px}
+.blog-link{color:var(--copper);font-size:12px;font-weight:600;letter-spacing:0.3px}
+.b-ghkcu{background:linear-gradient(160deg,#1a4d5c,#0b2d3f)}
+.b-fenol{background:linear-gradient(160deg,#5c3d3d,#3d1f1f)}
+.b-nano{background:linear-gradient(160deg,#2d4a5c,#0f2a3d)}
+.b-fotoprot{background:linear-gradient(160deg,#4a2d5c,#2d1a3d)}
+.b-melasma{background:linear-gradient(160deg,#6b2737,#2d1b2d)}
+.b-growth{background:linear-gradient(160deg,#2d5c4d,#1a3d2d)}
+
+/* ─── CONTACT ─── */
+.contact{background:var(--off-white)}
+.contact-inner{max-width:820px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-input{width:100%;padding:14px 18px;border-radius:10px;border:1px solid var(--border);background:var(--white);color:var(--dark);font-size:14px;font-family:'Outfit',sans-serif;outline:none;transition:all 0.2s}
+.form-input:focus{border-color:var(--copper);box-shadow:0 0 0 3px rgba(192,133,74,0.1)}
+.btn-row{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.btn-submit{flex:1;min-width:200px;background:linear-gradient(135deg,var(--copper),var(--copper-deep));border:none;border-radius:10px;padding:15px 24px;color:#fff;font-weight:700;font-size:15px;box-shadow:0 4px 20px rgba(192,133,74,0.25);transition:all 0.2s;letter-spacing:0.3px}
+.btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(192,133,74,0.35)}
+.btn-whatsapp{flex:1;min-width:200px;background:#25D366;border:none;border-radius:10px;padding:15px 24px;color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all 0.2s;box-shadow:0 4px 20px rgba(37,211,102,0.25)}
+.btn-whatsapp:hover{transform:translateY(-1px)}
+
+/* ─── FOOTER ─── */
+.footer{background:var(--navy-deep);padding:60px 32px 32px;border-top:1px solid rgba(192,133,74,0.12)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:44px;margin-bottom:44px}
+.footer-brand{max-width:300px}
+.footer-brand-logo{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.footer-brand-icon{width:36px;height:36px;border-radius:10px;border:1.5px solid rgba(192,133,74,0.35);display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:17px;color:var(--copper-light)}
+.footer-brand-name{font-family:'Instrument Serif',serif;font-size:17px;color:#fff}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.8}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap}
+.footer-col-title{font-size:10.5px;font-weight:700;color:rgba(255,255,255,0.28);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.footer-link{display:block;color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:8px;transition:color 0.2s}
+.footer-link:hover{color:var(--copper-light)}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-copy{font-size:11.5px;color:rgba(255,255,255,0.22)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .nav-links{display:none!important}
+  .nav-mobile{display:block!important}
+  .hero-visual{display:none}
+  .about-photos{display:none}
+  .speaker-layout{grid-template-columns:1fr}
+  .hero-grid{gap:40px}
+  .contact-grid{grid-template-columns:1fr}
+  .science-grid{grid-template-columns:1fr}
+  .visia-grid{grid-template-columns:1fr}
+  .big-stat{border-right:none;border-bottom:1px solid var(--border);padding:24px 0}
+  .big-stat:last-child{border-bottom:none}
+  .section{padding:80px 24px}
+  .big-stat-num{font-size:44px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">Cf</div>
+      <div><div class="nav-brand">Clube de Fórmulas</div><div class="nav-sub">Prof. Samir Tannuri</div></div>
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">Sobre</a>
+      <a href="#expertise" class="nav-link">Expertise</a>
+      <a href="#missions" class="nav-link">Internacional</a>
+      <a href="/consultoria-magistral.html" class="nav-link">Consultoria Magistral</a>
+      <a href="/pd-industrial.html" class="nav-link">P&amp;D Industrial</a>
+      <a href="#products" class="nav-link">Materiais</a>
+      <a href="#authority" class="nav-link">Conteúdos</a>
+      <a href="#contact" class="nav-link">Contato</a>
+      <a href="https://pay.hotmart.com/A105091762I" target="_blank" class="nav-cta">Acessar Materiais</a>
+    </div>
+    <button class="nav-mobile" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="22" y2="7"/><line x1="4" y1="13" x2="22" y2="13"/><line x1="4" y1="19" x2="22" y2="19"/></svg>
+    </button>
+  </div>
+  <div class="nav-dropdown" id="mobileMenu">
+    <a href="#about" class="nav-drop-link" onclick="closeMenu()">Sobre</a>
+    <a href="#expertise" class="nav-drop-link" onclick="closeMenu()">Expertise P&D</a>
+    <a href="#missions" class="nav-drop-link" onclick="closeMenu()">Missões Internacionais</a>
+    <a href="/consultoria-magistral.html" class="nav-drop-link">Consultoria Magistral</a>
+    <a href="/pd-industrial.html" class="nav-drop-link">P&amp;D Industrial</a>
+    <a href="#products" class="nav-drop-link" onclick="closeMenu()">Materiais</a>
+    <a href="#authority" class="nav-drop-link" onclick="closeMenu()">Conteúdos</a>
+    <a href="#contact" class="nav-drop-link" onclick="closeMenu()">Contato</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-ornament-1"></div>
+  <div class="hero-ornament-2"></div>
+  <svg class="mol-bg" xmlns="http://www.w3.org/2000/svg">
+    <defs><pattern id="mol" width="140" height="140" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="2" fill="#fff"/><circle cx="70" cy="34" r="1.5" fill="#fff"/>
+      <circle cx="128" cy="18" r="2" fill="#fff"/><circle cx="42" cy="82" r="1.5" fill="#fff"/>
+      <circle cx="104" cy="94" r="2" fill="#fff"/><circle cx="65" cy="128" r="1.5" fill="#fff"/>
+      <line x1="12" y1="12" x2="70" y2="34" stroke="#fff" stroke-width="0.4"/>
+      <line x1="70" y1="34" x2="128" y2="18" stroke="#fff" stroke-width="0.4"/>
+      <line x1="70" y1="34" x2="42" y2="82" stroke="#fff" stroke-width="0.4"/>
+      <line x1="42" y1="82" x2="104" y2="94" stroke="#fff" stroke-width="0.4"/>
+      <line x1="104" y1="94" x2="65" y2="128" stroke="#fff" stroke-width="0.4"/>
+    </pattern></defs><rect width="100%" height="100%" fill="url(#mol)"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-kicker fade-up">
+          <div class="hero-kicker-dot"></div>
+          <span class="hero-kicker-text">Pesquisador · Consultor Industrial · Speaker</span>
+        </div>
+        <h1 class="fade-up" style="transition-delay:0.1s">
+          Ciência que vira <span class="copper">fórmula.</span><br>
+          Fórmula que vira <span class="teal">resultado.</span>
+        </h1>
+        <p class="hero-desc fade-up" style="transition-delay:0.2s">
+          P&D cosmético para indústrias, marcas independentes e farmácias magistrais. 
+          Pesquisa CNPq–UNICAMP, publicação peer-reviewed e missões técnicas em três continentes.
+        </p>
+        <div class="hero-form fade-up" style="transition-delay:0.3s">
+          <input type="email" class="hero-input" placeholder="Seu melhor e-mail">
+          <button class="hero-btn">Receber Conteúdo</button>
+        </div>
+        <p class="hero-note fade-up" style="transition-delay:0.35s">
+          Protocolos exclusivos, lâminas técnicas e atualizações científicas mensais.
+        </p>
+      </div>
+      <div class="hero-visual fade-up" style="transition-delay:0.3s">
+        <div class="hero-photo-frame">
+          <div class="hero-badge-authority">CNPq · UNICAMP · DOI</div>
+          <img src="data:image/jpeg;base64,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" alt="Prof. Samir Tannuri" class="hero-photo">
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stats-grid">
+            <div><span class="stat-num">4.000+</span><div class="stat-label">Fórmulas testadas</div></div>
+            <div><span class="stat-num">20+</span><div class="stat-label">Indústrias atendidas</div></div>
+            <div><span class="stat-num">3</span><div class="stat-label">Continentes em missão</div></div>
+            <div><span class="stat-num">1.000+</span><div class="stat-label">Profissionais formados</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST MARQUEE ═══ -->
+<div class="trust">
+  <div class="trust-track">
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Farmacêutico USF</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Bolsista CNPq · UNICAMP</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Publicação Peer-Reviewed DOI</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">In-Cosmetics Global Paris 2025</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">1° Peeling Azelaico Pasta Anidra</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Criador Técnica Fenol FREE</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Missões Paris · Amsterdam · Japão</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Speaker 7+ Congressos</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Co-Organizador 1° Simpósio Peelings</span></div>
+    <!-- duplicate for infinite scroll -->
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Farmacêutico USF</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Bolsista CNPq · UNICAMP</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Publicação Peer-Reviewed DOI</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">In-Cosmetics Global Paris 2025</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">1° Peeling Azelaico Pasta Anidra</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Criador Técnica Fenol FREE</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Missões Paris · Amsterdam · Japão</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Speaker 7+ Congressos</span></div>
+    <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">Co-Organizador 1° Simpósio Peelings</span></div>
+  </div>
+</div>
+
+<!-- ═══ BIG STATS ═══ -->
+<section class="big-stats">
+  <div class="big-stats-inner">
+    <div class="big-stats-title fade-up">
+      <span class="section-tag" style="color:var(--copper)">Números Verificados</span>
+      <h2 class="section-title" style="font-size:36px">Uma trajetória construída em evidência</h2>
+    </div>
+    <div class="big-stats-grid">
+      <div class="big-stat fade-up"><div class="big-stat-num">4.000+</div><div class="big-stat-label">Fórmulas testadas e documentadas</div></div>
+      <div class="big-stat fade-up" style="transition-delay:0.08s"><div class="big-stat-num">20+</div><div class="big-stat-label">Indústrias cosméticas atendidas</div></div>
+      <div class="big-stat fade-up" style="transition-delay:0.16s"><div class="big-stat-num">1.000+</div><div class="big-stat-label">Profissionais formados em módulos</div></div>
+      <div class="big-stat fade-up" style="transition-delay:0.24s"><div class="big-stat-num">3</div><div class="big-stat-label">Continentes em missão técnica</div></div>
+      <div class="big-stat fade-up" style="transition-delay:0.32s"><div class="big-stat-num">150+</div><div class="big-stat-label">Protocolos clínicos autorais</div></div>
+      <div class="big-stat fade-up" style="transition-delay:0.4s"><div class="big-stat-num">9</div><div class="big-stat-label">Ativos Nano documentados</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photos fade-up">
+        <div class="about-photo-wrap">
+          <img src="data:image/jpeg;base64,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" alt="Prof. Samir Tannuri" class="about-photo">
+          <div class="about-card">
+            <div class="serif" style="font-size:16px;color:var(--navy)">Samir Tannuri Cerveira</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:0.3px">Pesquisador · Consultor Industrial · Speaker</div>
+          </div>
+        </div>
+        <div class="about-speaker-wrap">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4RFiQXFhQUFiwgIRokNC43NjMuMjI6QVNGOj1OPjIySGJJTlZYXV5dOEVmbWVabFNbXVn/2wBDAQ8QEBYTFioXFypZOzI7WVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVn/wAARCAFKAlgDASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAAECAwQFBgf/xAA9EAACAgIABQIFAgMHAwIHAAAAAQIDBBEFEiExQRNRBiIyYXEUgSNCkRUzUmJyodGxweEkggcWNUNjkvH/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJBEBAQACAgICAgMBAQAAAAAAAAECEQMSITFBUQQiBRMyYcH/2gAMAwEAAhEDEQA/APngAAUAAwgAAAAAAAAAAAAAAAAAAAAAAKAAHoBDANhQAAAtg+yAAhDAEAMQ2IALa5fysrAKc46Yi3619yrswJxfTRPpoqXRk9ogU15IE5dH9iJYAA0PoihD0DYih9B7IjNSCcIuclGKbbekj1/DPgi67055tvoxktuK7nn+BZNGJxbHvyYc9UJbaPrHPVl46nVZpTXSUT14/rjLInt4Di/wZk4dU7safr1x6686PKta6M+0O2GPQ/Ws5oxj8zZ8k4vZTdxPIsx48tUptxRq3tjuprTCMNIe/Y4NFoehDR0xiH0DYJEkl5PVhhtC1sux4wcn6nYhokos9mPBuJtLIUHP5PpKWi7kZFxOs/H1E2q0RZa0QaOGfFo2gAxHjzxaIAA82UUgADlQAAjIYAgAaR2vhzDebxBVRXVnGidXgfEZcL4jVkxXMov5l7o55y9Vj6fRwWjGo+T+8S+o8F8T2u2c4zS3B6R6zJ+MuG/o3KqcnbJdIuPY+ecTz3l3Skl0bOOM3fBXNYAwO6IgAHMMAAAAAAAAAAAAAAAAAAYCAYtlD0HRd2RbAKnteEJsPAtAMQwCANC0MKBDYAIAAIGAAAAAaYEq5akFi67QtINoKQxAEPYyIBTHFOT0k2/sIvq5opaTL6BHEyJtJUz2+21olLAyIpt1t676aZsrnkz67m14LHXZybsUmtaUN6X7mO9a047jJeGB1o9F01B7/l7f+SqdNds5J/LLxJdE/wAmpnE0wI6eNxzNxcaOPVc41xe0c62uVU3GX9V2ZA9XHy3H1WXWyeP5+Rjzost3Cb2zlN7EI1lyXP2GAhkgaHsiNHowmxJEkiKJxPo8ODFqyMdmrGxLcixV01ynN9lFbYsWid9sK64uU5NJJeWfU+BcHp4ViRioReRJfxJ+W/ZfY7flflY/i4Txu1mS5V4zG+D+I3VwnKNdakt6nLqvyjFxD4dz8GmVt1H8NPXNF7PqpGUYzi4ySafdM+Tj/Lc0y3lJpu8f1XxGcNFMkel+K+GR4dxOShr07fnil4Xsecmup9vePLhM8fVc5VTIkmI+dyx0lRABHgzjQABHChiADICWiI0QSRJNkUTWhrYeyuXVkpPRXslAwEBACGBzAACAYAAAAAAAAAAB4YgHsAAoBMYmAAAASXYABgAMNAwDYaEMBhoQNjQBAACGMQBsNsAABiGuwUhE1Fh0QRHQ0mGxxfuFOK+ZHu+D8GpVEbcmuMrZJPTX0/Y8hwij9TxOiD6rm2/2PpmPFKCTfU4c2etR2458oQ4fjJf3a/ZE/wCz8V96U/yXc8V5JKSkujPNt0c3K4JgWRf8PlfumeVyOGSqyppvfs15Pcza7NnGzqnW3JPmi+z9jeOdjNxeay8ZKtxnHq+70cSyt1zcWely7Ommu/8AscXMqagpp7S6Hq4svhxyjE0RJ6I6PRKwiMNAdcaAYhnq40qSLIdypFkWfT4KxXovhRVy47iKztz9Pz4PqR8ZwcqeJk13VvlnCSkmfWOFcVxuKYysomuZJc8H3izw/wAtxZXKck9Lx3TcAHK4zxzG4Vj80mrLZfRCLXX/AMHx+Pjy5MuuM3XW5SPK/H1sZcRprSXNCvq/yzxkzZnZdmXkWX3Scpze22zDJn63j4/6eHHjvw8883atiGyJ4OWtwhDEzwZtAQxHCqBDAxQAPQGQJj5iIANvYgAgAACAAAMAANgAAA/ACATABiGBQeADwAAAAACAAAAGgGwANMAQAJhRoaQgKJeeh2Mf4a4jkURuVajGS2uZ9dHKpkoXQlJKSi02vc+ocM4ni8W4d/Dl6VkY6kl/KkerhwxuO7NkfNszhuXhdb6ZRXv4MZ9T4kqP7MuWW1OMYblvy/B8ulH5nrtsnNx44yWLZogHrXdiTR5UGg17htiAe0vAczDQJJsA2Ghy6dBAA1r2CuErJxhCLlKT0ku7PUYPw3Vj1q/ick339KMtJflmcspj7axxuXpyeGWywsqd0FGxxjpPx1Ozw/jWVkZ1dE+Vc70tI6FdkM6ieJjY8IYzWvU5dKL+3uXcG4NgU5cbaZytnUm25eH7nHPLHL4d5hcWD4hty8S2H8WUYyXTlejmY3EMrrJZM04vs31/4PdZOLRmxdd0Izj42uxz6+DOq7rOPp+Fyo5zKSKy8M4jZk1pTnz/AHa0zVkLni4vrtG6ODj17lGMU/stGe1x20c77V5rOpajLfU5MoTuUqorcm0kj199WN6E7MiXReI9zl/pqacqm+EZ1epLlddnj2ezvx5arnljdbWY3wnCWD6ltzdrW9Lsjg8S4VZgvbfND3PrPDseuOJB6UnJddnmPjqmqnFi46i59kdccr7cbHztoia8ah23w3CcqlJKbin0X5NnHK8V+jdhUejW9xlFN90enHOSyL1tm3IGhAevDJhJEkyA0z3cWemaujLRppybKXuucov3T0YkySkfQw5ZZqsWOzZx7iNq+fMufTX1eDnTtcvqbb+5RzCcjUywx/zNGkpS2QbBsicOTk2shMiSE0fP5M24iA2LZ5MqpaDQAcaAAEYDEAEAAAQAAAUAGwIgAGIwpgABAAAAhgBQAAAHgAAAAPIBQIYaKAEMQD2AgQ0GJjABDQ0g37AGi6nJtojJVWyipdJJPuUDN45XG7lGizOyLIShK6bjLum+5nb2IaGfJln/AKu0RAkxaOakAAAAnoACGAbOr8PYtWVxKPrx54QXNy+78bJbqbak3dN/CMb+zcb9dbH/ANRJfw4vwv8AlnarxJZUY5PEHyxS36Kel+//AASzIV41qysuak49a60uzKcPnzN5ebZyY/8AJW3pP7v7Hlyvby9eMkmounbPLh6eNFU0Q6SnrSS+xnlxqnApdOFBualrmUfrZmzuL/q7oYeM1VU5cvNH/sKijLirP019VEYP5IzXWb92JPtd7d3ht/EciSnk111Q7rXc6k9yj1ZwMLOz69wvljWv/LPqv9tHZquc6+dp68/YxkliFjcemzJY+7L77F4McpmApY916X6bUbIz5+d9vwcr4lyZ1wx6ZtetvnevBbDjOWp30Y2OrIwm4+p4j+TzOfZfPNslky5rW9vrs9PFh53WOTPU09Rwv4xyMTHVVtcbkuzb0zj8e4zdxfIVlulGK1GK7I5PMKTO0wku3ndfg3F54dboUU65y3JPydbK4VDJwLlj9pLnjF/yy8fseRqs9K2E+/LJM9pw7i8s6UeZKNiW0+ykvYxyS43tHfjvbHrXhmmm01pro0xHU+IaIU8TnKuLjC1c+n4fk5Z78M9yWPPlNXRjFoDvjmhjFsNnfHlqaSGQ2B0/tqaS2LYg2Yuagn8rj9ysR587tQxDEcsgAAHKgEAGQAAiBiGBAhiAgAAAABgYAAAAAAAAABQAAMA0MiNdwq6imeRdCqpc05vlSPRS+C82Nbfq1c/Rcuzz+HlWYWXXkU6U63tbR9C4f8S4OfgbzJRqtT1rfXfue3hxxuPrdWaeAz+H5PD7vTya3B+H4f4MqPb/ABdxHByuFxhVOFtjn8rXeKR4jSOfPhMb4Q4tbTfUWtvYb9g30OGg9B09hD0amOwC0SEy9aBPSa9xBoDNgYhDIAewN2NwrKyYc8K9R8N9NmbZBhEX5GPZj2OFsdSRQwEwG+wgAAABnd+HpvFqyMvW9NQS92cI9Jj0zw+FVqUdWSblyv3fYxyXxp045527U40yx/1OdFSf1qDfn7nmeJcUsyp6b1WukYLokidmRcpRqvs+SX1L2MeRRRG7VNkpp+WcsMft1yt+BiT/AI6nLtHqeghwzIzq4zeTXRvumm2een6MU071r2hFtv8Acvo4nfJRi7eVpaOmWF9xjHKTw9fhcGxcSKc8idtmtbekv6FVmTm1Zc6oWqFHddO5wY32N79ab/csdk5dXNs43C326do7FmZfGPW99fwzFbnZEX8lis69U61v9uhibcnpNtmzEpUZpy6+TPWYpLsX05Mp2ynbJUtKSrSS29ddnkubbb9+p7q7c482u3g8ZpY2d80VJVWfS/Omd+G+3PknmIuFkIqUq5xT7NxaTIuWz2tPxHTkVcl1cXF9NSW0ZMjgmFxDc8Sax7H4XWD/AG8Gpyz5mi8f08mz1UMBwwcWeMpSyK0tqK7ryc9fDOZDJjG91qnzZGW+n477Om7b6JyWNLTj9P3S8E5MpdSNcWNnmsfHpRzMCnIiv4lT1P8AD/8AJ53Z7TH9DiFdiXyTti42Q99+Txttcqbp1zWpQbi/yjrwZeNfTPLNXaGxiA9MriBiA3MgwDYtm+wYCAlyAAAZtAIAOdoAADNUgGIygAAIAQxpN9lsgiBdDHtn2gy+HDrpd1o3OPK+olykYgOrDhT/AJtgdJ+NnWe8csA0I8rZgIAGAkNgAhgAeAD8h0AB6BsQU9pDUiIbLLoPbYJC2Mu9g0AAaxEvwSUWyMT3PwJwfHyK7c3IgrHCXLCMltL7nv48ccMLnl6jFunipVyj9UWvytEGj7jbjUXQcLqa7IvupRTR4L4r+FYYVMs3BWqY/wB5W3vl+6+w4+Xi5b11qpu/LxLQic1ogzhy8fWtkMQHmqraEpXQUuzktn1ngdGPl4qk4Llh8qR8jT0013R6PhXxTl4C+SMJe6fk45y1Y7Px9wzHxqqMipcspScWjwckdjjXGcrjFysyJLUekYx7I5EkMN68pURDa6CNgGu4km3pLbPZ/BfBqrZzzL4qfpvUE+2x69kZeDcAlCVeXmJLpzQqa6/Zv/gu4lL+I3Pv2i9djtxnOyMpWP5nKTl/U85xnJUrPTrlteWjzW3LJ6ZNRyciP8RvewaVePOyXtpfklFRS5p9EjLfOy6X0tRX0xS7HbDHbnldKCyiHqXQi+za3+BRrk30T/JphHkXTv7ne5acj9SULJJLlXM9Le9Fsb/uTysaUblZrVd0VZF+++6/rs6/w/wuvNjucU0u+0YmHbyvbSnDUZJNPcmd7F4Xk2pNwVcH5n03+xplRicOkpYy5LIrolrTf36HVwc2rOx1bBOMl0nB94v2OOXF8tzk+mWrh1NK5rG7Je3ZHhvi7HVPGZ2RSStipNL37M+i2tJNvpFLbb8I+b8VuednWXS7SfRey8Fw1Gcrb7cb1GnuL0acXOspmmpOL912/dFF1EoPcU2io66lSZWenqpcRlk01RjLUmuvUnFOu2HXeno83i5Drai5a/wv2Z18e+Vl1UW+rkefLDq9GOfaDFv5eK89aaXPtoo+Jsf0+IK+K+S+PNv7+SyiyFXF5N6UeZ9ztcYohn8MnGPWda54NL2NY59c5synbF4gBAevbzAAA1KgGIC7DEAF2AAAmwAGm+yLIUWT7RZNWm4rEba+H2y7rRpr4Vv6mzU4sqxc8Y5QKLfZHdjw2uPsN4cI9kbnB91n+2OLGicvBfXgyl3Ol6aj4JKWjrjwYz2XO/DNVw2P83+5uqwqo+EKMixWHWY4z1HO7q+NVcV0SJaS7JFCtJqZ0kY0bQBzICjyc6rIP54yj+UQPoU7+GZuPKz1ITrmuXkmktPXc8XxbHooz7IY01Ono4vfv4Pnc/48wx7Y+nus0whoehbPIyEMQwAAAAAQwABBsAABlCGdbhHCJ52puLkm9KK7so4vw+fDsx0zi49NpMkym9KwgIaOuIkj3v8A8PeIVxV+DNtTk/Ui2+j90eC7FtNs6bI2VycZxe014Po4deTjvHfljKPuXuV31xtx7K7FuE4NNfbR4jhnx2oVKHEKZTnvrZX7fgjxf44jdhypwKp1zsTTsk+sfweSfh8ky/8AWdvFZCUbZxi9pNpFDJylttt9SDO/5Ocyy8NwgADwVoE4y0QAyLlLmCSSKh7IBhCEpzUYrbYLcmklts21wVEPeT7smxGuuNXncvc9v8H5dS4dbVvU65cz+6fk8LZJtlmLxG3CscqtdU4v7olmyPaZtUsiVv6e6MaW3KUt65X5TPO5OJprlshL3ab6f7GfG4tCEbVZGfz6fv1CmdmVY7JSl6SfSL8snSSbdO53U6jzR8eCqO2jcVOvTeuzJtiqlVzLsTjjxXllla+Rb7roTXcbHoa/hz9Vweiatn60a91xeuXT66/8l/CcWzB4ZbJrlt21JPujtcOnycExpLq/SWv6FdFW8VqW25Pb35O2GV15ZrDRwy6+xu9OuvvvfzS/4HRw7LwM520ctlMnqS5tNr/lHcx0nRDfdLRZpexjLO1ZHn/iW6ynh7hH5Va+Rvy/LPGOteep6X4uv5symhPpXDmf5f8A/DzrOass6NPam1H2Yv0sJfUuYtt+eagu3dlhdjFPh9b+luP+5PHqux7YSTU1HtvuadjRd1Z49MFrfqyk+kt7PQcFt9VJ2z2106s8zfdJ3T549FLS14NPD8uGPJzkpP8A0mc8bY6Y5z5X8X4R6GXcqeXl5fUgt9ZR8/0OId/OttzMKOZY41Uxk4Uxb3Kb8/sjhWR1L7M7cdtnlyy1vwgMNN+CyNMpHaY2+md6Vga4Ym+5fDFrXc7TgyrFzjnKEpdk2XRxbZfynWqrqj2RenFdkjpOD7rF5L8OVDhs33NFfDIr6jfzi5jpOLGOdzyqqGHVDwi+Ma49oog2LZvrGPK9SXhIfMUKRJSHVNLGxa2LmGpInVNIuG+4v0+y5aZataJ6bxlYZ1SiV/MjotJkJVJmplp0Yk2SUmXSoK3W0dJkhqTASAu0083zNdm9C6sNgfDuVvivUBaGABoC7Fx7MrIhRUuac3pI9Jd8E50KXKu6mc0t8nVM7Y8Nymzbyoi7Ix7ca6VV9cq7I9HGS6opZjLC43VAAAcwAABQAAUeu+FOK0YE6p3zSrinF/ZnP+K+KV8X4q7qE1XGPLFvz9zhJ6LE0zMw1diGhk9b7CaOsoiGwfQR1xz0iWw2RA1eag2ABs43LajQaFsZgAtgBAD/AAIuohr53+xBbVD0o7f1v/YlKTeiEn1CUlGG3FNzXy6l9JkK1qtOGvnT+Z76fgzg2I0J1wlZNRittncoio0wilpaMWJUqYc8vrkv6I3c2oL8GMrtYl5ArT2+hMyFB/PNffZNFW9ZC/zLRagr3vC5c3CcRf8A4ka4LS0YOCy5uF0faCX+xvR1x9MX2tpWq1+5YQrX8OP4I5NqoxrbX/JBy/ojnfbTwXGr/wBRxXJmntc/Kvwuhzpy5IuT7Isk3Jtvu+rMuRLmnGtfl/8AYglSnpyfeRNsEuWKQtdShxWyXgrlJ67kHbqEt+ArDkWyqypuuTSb30ZdRxbKplF12uOv8STRmyGpNNb3rqZ2dJ5jLRZa7J7b2Ra2vwRS6Jk10RZet2IxaTLo26RTNcsmhHtx5KxY0+sHrdTMGzpOVLjG6Fv3Lld9zmqbRJWG5yys3B0laSViOcrfuSVz9zfeMXB0edD5kYFd9ySuLuM9W3Y9mRXE1aVNNKZJSMysLIPYNNUGWpmVTJKZixpqTJrRljYWRmZsVfpA60/BBTJqRnyaiEsdPsBcmA7VdPDAB1MDhF2Zh3XVpP04Ob37I+Xbp3csYAag6HBMpYfFsa+X0xmt/g+sRa1ve01vZ8ZTPU8B+Knh0wxc2PNTFcsJxXWK359z28dmWPVnKPR/FPBocSwJ3wjrKpi5Ra/mS7pnzKSPp2V8T8KrxbLK8iNsuV8sEurfY+ZTlzSb1rbJy/48rigAAeNQAAQAAGigAYyqcZyQ+YhsAJNiDYi7D2IAJsGwEGybDAQAMQAQOKcpJLya30SSK6IqMOd932/BKUiURkymT2yU5b6EBEBdjxi7E5/T/wBSoujPk15iWq2zl0ZZtySMUrEo9HtNGuh7ijFFsHp6JuxLv3KHLT35EurMqsumk4zT3yvZqRmlWvTfl+48e1utb666Ae/4KuXhlK/ypm9vo/wZeGLlwaV7Qj/0NT+lnZhogtRX4Od8QW+lwbIa7ySj/Vm12a6I878YZUocOhGPeViX9E2cW3lptRi2+yMlKc5ub89Su62Ukozeub/oX0Siob33KLfAg5k/INogpvnyxM/M3W9+Sy58xTvWl9zUQ74P0G2+3XSRhZ1FqUXF9mcyyDhNxfhmsaLa9yrlFRT18zflAiFTXOuZtL3S3omu+vC8lonctvfsUl6ltt+CmS1Jo68eXwhAMDqAQAVDDYgLuiXMxqbIAWZ00uUySsM49m5yM3GNkLOpphYtHNhLRarDpOTbPR0FYmSUzArSStOm4zca3qZONhgVhNWDTFldCNn3LI2I58Zk1YS4puulGxAYY2gZ6HavNHQxeKX4uNZVRPlVsHCa+xz+4HydbetZpA4+xBSZJSXk0oaEPYmy7C2IBjYQDEZBoehINgN9HoQAUMQxBAMQAMBAFAxAQDAACAAGAgAYFyfyr8EJS9iK3rQaGlIYgKDZJS0tEdDWtfciB9OifQ6ONL+HH8HO0zfS1DHUn06EyinZYk9/0K+eU3r/AGRS588t+PBpx4/zP9jIuSfJy7fYrw9rInV/i6otRLEpc+J43L5mkIPpFElVRBa6pJBOyTaT+VN9ymMv4qiyy6pX0yq5nHfld0dKy2wlWo9ZL+p5X40nCUMOqtpycpN6f4R0v7Jqa+e7Il/7kv8AseY+KKa8DIqjS59YNvmlzPucW3Am+e+cl9MflRbC7lSTWtFdcUmki6UYy7o0hO9ezKpXr7olKpeJGW1OPRiQWxm29MTkudbKapdUvYJz/il0NsZdOhmyl/E5u+11F6k9ai9EJrp32WCvsy71HN7lretdFopJQLRd/Lr3Fb0lsF1Ca3FiCvmDZEkkdMbUGw2PQtG/2BsOYNBofsDYbDQaH7A2Gw0Gh+wNhzBoND9g+dklYyGg0amWUNLlaycbTOiSZ2x5bPbPXbVG4mrjImTizvjyxi4NcbgM6YHSZYsdHPAehHxXoAAABsGAAAAAUAAAAAAAAAAAAFQAAEBoBhpl0paAnythyIsxogCTLeVD0a6Ir5WPkJgWYQRUUPSGBqSAE1skBRDk92NRSJASYwLS9hgBoBZbLVEIeWtlaBy55uXjsvwcuT4IIosTa7NkEupohS39T0cap1OTf1dF3Oz8N0xyeNVQdqcFPan4aXsc6itRl0R2uAVqWfKaX91Hp9mxJunp7S7DU7Oaq6CkunzdCFdF9M+ac4SS/wALI12OUdPqRlKV0lXXZ6Wurlo1lvSTS+yeo/O0l9+h4X4rnC7iyippxjXHbT/J62zAx5y3ZKy5/wCeTPFfEFUf7XvhTFQjDUdL8HKNVzE4qfR7RMjGtJ/N1LFqL6JGkRfVGXJXTZtm06217HPnNt9ewgqr+tFuVi3Y8/41co76pvsyuvSth7cyPpF9FGTh+jfXGUWvJ1k2j5vzPXshvrE7nFPh2eMnZjS9SH+B90cKScdxkmmvDRLBEaemIAq2LJx6vRVFlkXpoyKSUQn/AHkvyETph7QwADuAAAAAAAAAAAAAgAAAAAAB7GmRAi7WKYEAL3sTSgAA8ygAAAAAAAAAAAAAANMfKy6qEBNQHyo11or0xqLLNDNdIIKA1FEgLqBJDACgAAAAACgABgAAGgAA0HRE7QABzIXMZ7wMCPMy+WHkKr1ZVyUPcncUyekydcW9JLZB1y3BeZdToY9OlpfuznlltUIVKHXuyxJ+zNCjGPZdRnPa6KuPLH7s7XwtHnhlW+9nKvwkcd7cXpbemzv/AApW4cKi2vrnKS356m8PbOXp6DGXVlv6depzR6NrqFCXK37lyai/2Ll6TFmktNo8DxOfNxzNXtP/ALHvreaPVJtHzfIscuM5Un/NZL/qco3VkoJr7lDWmaN7IySaAo2ZbaUuzNcotGe6O3vqaiMenGf3TPe8RvlTw6FsH1jFM8FNNSaZ08rjFuRiQocdJRSb33OkvhK6ONxqeZnUQkuWCfXbJ/FEMeVcZxUfU90eajKUJKUW015J2323P+JOUte7HZNKWAxaDRxZPeiAAOT3Jv3HEiSiXD2GAxHdAAAAAAAAAAAAAAAAEAAw0F0QDAhogGANKA0A0mcAh90NVtk1VryXVRUGi/kiPX2GjajTJRhsm0OK6m5jAvTigaXglIiWBaGAGgAAAAAAAAw0wEA+UOi8k7QIA2g37Iz3geg19xuu3l5nCWvfRsxuEZeTBThDUX2bZO9+Bi6e4cyR2Kvh26WQq5zSWtto3S+HsammTnY3LXljeSbeY5/sOMbJ7cYtpd9I9BxXhePjcMjbBalruXfDdEJ8NulKKb2+pnV3qq8/+iyXR63pvk9y/D4VblY0r4vUUe1xqq54KrlFdV0M2Hi/o8O6vXTmei9U24fCuBK6v1srpHwjVxHgWMsV2Y7Sa9mdDiX8PAhGMuSMtJteCH6CFfDGq7ZcrXuXXwjyXD8d359VWt/N1PdX0V2YUqlFbS0ed+GMZSzLbn9MPlTOzxbNqxsK/wBGxevJcsUu+2TH0rx8IRhdJfU03Fa9jfHSSSWkZ661BKK7vuzR9jjfLUPYdPLUV7vsgQNbWmtoitHCYysqzLZLnjXXKKfjbWlo9Xg0rHx66YrpXFR/ojFwTFUeHxjypeo+Zr7eDp0/NJ/eTN4Xyzk209IItUnF9IczaI9iyl7n+xrL0RkslnzT5IVQX3ezwnF8TJqy5ZF9MI809c0Wv+h9Fsb20jz+XhY0rrHkvnTfZs4ytPIgSyFGu+cY9YKTSf2KuZe5Q2VzgtbLN7ITeolGLIr2uaPdGddjTLo2UTWpdOzNxEQACgABgIAAAJRIjiax9iYCGd0AhgAgGBAhgAAIYAAAAAAARQMQwoAAIIKOhot0mJwDJJDfQaWkGtsCKTbG0S7IgzNiESiuhEml0GKoS7iJaDSFygiA9oN+xO4Wh6LI0XzW41Ta+yLKsDIuqdsY/KnonejPpC2kdHM4NkYldc38ym9dDpLgFdePRObblKS5vuN2m3nOZvsica7ZpcsJNSel07nsLq8HBi4+j114jslXVU8PHlGCSck10Gv+pt5qHBM6ceb09flj4fwe3KvnCzdcYPUmeybvjlbXL6Kj1XkyZFir4fffWur2+g6wcrL+HK440p0TblFdVvZk+GseNufNWRT5Y+Tp/DsrHgX2WttSba2Z/hpL9flT8bJ9DswePkevT6WlDptoshVOGDGNDjFrotnI4jxyFVk6aa3z702dR1yuwK413cj11aNbRTgxvXEJrIsU0o9NLRRxOnEfM5W/O325ieIoYWZP1r+fnXRyZVnXcMipyc4Oe99OrAnxqmy7hUK6ouUnojwKmdHCrI2Lllt9Cr/5lx4UpckpNLto51/xBZPnjVUoxl7k3Pau7nZDxcCu2L6waZoszqb+GO2El1js8bkZmZbjqFu/T/Bnod1jVFc5fM+kd9CdjT1uJxXDy8ZV5DipR6NNmTi3GKIY7x8Vpt9Nrsji5fC8jErU7I/K/Y6GJ8PyuwfWm2pNbSL59DLw7izwaJ1qHNzPe0ZoWTvyLLeXmm/HsdnL4LTTw71VvmS7nPxoKqiL8y6sxl4iw64ygnOzXPLppdkicSPWT2TS0c2jROqDsthBfzPRA1YNMrLHNdFHyFeqwNKElF9Ix0i/A+aCl7bZkwkq8N/MnJ9e5dwTIryMX5JbcflkvZmsPlnJ0dltL+Z/gjykabYzlP0/mUeja7bN5eknsWy1No4HEqefKl83R9TrXq1WP5WcDi9tleSpLa+U4tuNxKhUZPLHs4pmJmrMtndOMprqloyNlQt6Iye0DZFlRCST7lNsVy7XgtsfKt+3cjJKUdp7TNQZgHyvfYkq5exoQAsVLZNUgUAaVSiSqiBk5WSUWjUoL2FYlylnsZwADugAAAAAAAAAgAGACAYAIYAQAAMKQDAirND0S0Jm+rCOtsYaDRZBFiaLOUXKSzwRUG2SaFo4ZKiGiWg0YV0uB4VeZkzVy3GMdnanwzBto56IpSrl4MfwvFKV85dkjWuI488mGNjfzS6vwbmtMuimq741qn5OXbkZ1GEcW7kSSlZ0LHnJcReNNLlcN7KJXU0YunLop9TQ22yqsXo2NbglJJkLJepXQl2cjznHMtWZkZUWPSjpuLLXxyMaaFGLcq+5Ow63E8myLnCOM59Pq8E4NLHxE9LqcXI+IrLFKMKkk/LZzv1mZkuFcZNtPcUidjT00uJelxh0WTXpOP8AuQhxLDrtuxb5Lkb6PwcGzhnELd22Rcpd+r6i4dwqzPlZtuPL0/cbo6XEuL49WO6MPT302uyORw7iM8Cc3Fcyn36l+HwiVvEZY9j1GHV/c7cuFcPjBw1FTj/UeaPKWOzJulYoNuT30RqhbxFyjRGdsX4XY9ZgvFljylXBfJ0fQzYdteZmzujXyqr5dvyOo8rmU5FNiWRzcz8t7NnB+FLiHPKUmoxeuh2PiilWYsboL6SHwstYlz+415ErPhqh1P05vmXnZTwfg8a5TtyEm4vS2aODW2T4jltyk609LfY6c1z41qr79TUkFNE8LPVtEIpuHR9DzuPjLH+IYVx7J7R1fh/EtxfXtuTi5PyYYWRt+Jk12W0S+keoyKasqr0p66CTUMWUF4OJx3Psw7oSpkttdUWcN4hG3hs52zXqPbZrflWvPSfC2n20edlps2X8TWVhQqj4l8zMSOOd3WoetANsRhT7dy3E40ser0v08Zx23vfVmPLs5KtJ9ZGBWTckt6/CLIberhxTHyYKNWLfXOK71vmRx8XiVmBkepTZp76x8P8AJlhZak4xtmlrelLRGmuLbclFv7outI9Pm/FX6miurEjNNr+LJdGvsv8Ak3YPHaseiLanGCWtKPY8tUlGS1yx37JI3UT1Ke2/BMqR6iXxPg7+Zz//AFZlyPiPhduntprp80dHnsyXzxfV7RyrIqVU9rfLIki16LivFuG5eHKqmadu046icFmNajJNLWjZ3Wy60iLEyTIgRa2tFTqil02i5oiywEYJRXklpAuwGgAAAAAAARs+kkRn9JZ7GYBgd0IYBoAAAAAGBAgGGgEAwIEMBgIBgAgGBF206YuUvcSGj2XBjaHLtDUCwaLONLVbgQcTS0VyRnPDwkrM49COi+a6FWjw8niukR0Gieg0c1beHcQeFXbHl5lNGOFkq7fUg9ST2LQaGxZdk3XW+rOb5/ddCqUpy+qTf5Y9C0NiOhaJ6FoCB0uAx3xOHTwzn6Or8Opf2im/ETU9pXp1O2OTOMopVJdGQxq1RzShHpKWzlcQ4pas/wDTxajDenI0ZvFo4NdUYRU9nTaFkueHxb1o1ucJR+bRq/8AS8SpnOMdT9+z2ZbeN4u67Xp7Wml3RTk8dxo1SWPFucl4RNwX8IrVOBfFddSZbw6NeHgylbpKTcmzzmPxe6iqcNc3N17lNvEsi3H9GTXJ50Tsaeqy7cfN4XP0pJpowfDV1NeLZXZNJ8z7s85DIurg4QslGL7pFfVe5Oy6ewyeIYeDVP0pxc34j5OPgcfsxrbHZHnhN717HGJem2N007ub8Ru2twor5d+WcKFs4W+pGTU972KUWhKL32JsWZGTbkyUrZczRWnJLSbSHNcrRfUk2lruBrx6+SmCffWy16XRCDRzaNB0GkZcu9adUf8A3P8A7AZMi31bpNfSuiI1uKnttaQuRb+3sX1VQcduC/ob9IIyTsSjLumujJ47fzPllL8IjZTvTrUYtFmPSnKXqQVn/YgksuNb6qRGPE2rG4VOXMtabNKxqE9qqP8AQl6NXdQSfukZ8Kosyci7W6ow17szS9RRmnKKT79DZbqMdR7mZx2ixGR7f8/+xsofNUtvbXQz60+xbTLTcfctFrDQbDeiCMitk5S2yDKJR7EiHNpBzlEwIcwcwEwIcwcwEyM/pFzilLaLsUvuAm+obOvaIYBsNjtADFsNjtAwFsex2gADYbJ2gADYDtAAADcAAwGwgJKMm9JNsBsdNxTI+mXyp12BQ0j6crntSqx+n1LuUko9TUYtVchCdZp5SM4kqSsFsdRKNGrJWkZ9Hy+f/bvj6LQaJaH08nBpDQEgAjoWiWhqLfgCGugi1VSfgkqJMDOSqtnRNTrk4yRZ6WpaYnWkmUV2WTtsc5ybk/JF8831bevc1QUNfcjFxjY9lGZ1tLeicaZSWzRa06+hKpfIgMjqamkyLioz0zRZ/eoqnHcm/YILK0mtBOK6JIbe+Uf/ANxARlRpJotjH5epGyyUXrRZF7jsFUW650TTj2IWrmnolGrT2UVXR3Isxu/3Qpf3hKuUa5NyehRt2CKP1VPmaRmyM7mi4VbX+YxpV+Tl8svTqe5eX7GQrpj0cn5LTWtASbaRqitJIqpjt79i8lAaKocu/dlVSW+Z+C1TXT7mVWPwiE5a6LuEppL7kE9vbIDk6NeWUPUejL3Yk9Jma17nv3LEZ7Xqb0VwbU1L2Lbo9mVGxsXVJikV0y2uV/sTkzIRFjEyhxWyXKRg+pYUR5Q5USACPKg5SQAR5UKUVosFLsBjkuoicu4gIjGACDRsx+HZGQtwh092bIcByH9TSNaqOQGjdmcPliyipS3tnVxcGr0FJ6LMbR51Jt6S6lix7W0uRnWqrqeVNdPlNijWm2upZgOCsK9/yllXDrrH1XKd31KK4PfTfuSWVVFdHEvWDkQ4TJvq3ovhweO+qf8AU2W8RprX1f0KHxavb+boP1gUOF183WKLa+HVxbekZXxWKk2m2vwVy4u99IsvbEdBYlVfnTYHJlxOyT+lATvB1HpkZJEOYGz3zHTkSRLQkNdTpGKYpICLZazGPK7ooSZrtScupXpJ9j5PN/uvTj6UcjZL02y9Bo5NKo0+5L0kWqOw0FV8i9iUUl4GxIIl0DaFoNF2jPNOVnRjnHlhonyvn2K2La6BUYVxS2QjBSk9koqaIuE1LaCHYlGGkTraUEQcZOHUhGE1rqUOX96KPWUifI+bYow1JsCjWrNEpPlmmWOvctjlBSXUoqssUl2LYfShKuKJJaQ0KLd8+0EZTb7F2l7BouhVyvn2QvplN80X+xoAuhzJRcXqSaf3Elt69zo3JOqW1voYal8/4ILktJIklt6EW1rl+Zrr4MqtjHUUkD5U+r6lcrJP7IUF5ZkaHYlHUVorjby6ItlPNpjQvdjb22T9TaMrml/mYlKXsXQ1Ic18qZVCf2LO60QU2dYszmh9G0Z5dGzUBzuL2vBohNWR2v3McnsITdctoaG4gwhdCa7pP2YNrfdEBHoy6PVFG+ptwra4Rkp9ywVqMn2TBxa7rRteVWuyb/Yy2z55bSKisAAigT7DB9iDLP6hEpr5iJQF2JWrcmuD7NlJownrLqf+ZBHspTqwsTm5eiXg5VnxFWvorkzfxFc2BL/SeQrqlbaoQW5NnTK2ehfm5ssu3ma0k+xP+0pqnkS/3Ojj/D0pwTsk9/Y1w+HqV9W2STIeZhfOubnF9X3LHmXt75tfg7WbwmmpwjFJNvRdk8LrrwtqK3odaPNTusm/mm2R2/djktSaFowq6jEtyNuuO17kq8O2d/pa6npuB1QeCnrroWNXFcUmmvB0mMR5/K4bdjw5tcyMOj6FkY8LK9NLqeX4nwqVcnZUtryiZY/QjwvhSya/UmungDr/AA828NJ910A1JNLHK2STKuYakfR25WLBpkExtl2wnsjJiUiE2Ll4JEJvciI31YI+TyXeVrvPRDDwBhUkwBa0RYA3sEIkgGJjEwhAHMg2gEIltEW0AMiNtC5kUJiG5Ii5IsAAuZCckXYYEecTl9hsSAjuT7Iaqtl2i/6DYBOS9yaxbn4ZNYFj7tIvkUOaM9VD05b1vsdF4HLBtyXRbI1VpR6rqZy3FZY0z3tx6FnpWS8GpvSK2rJ9tJGdir0Yx6zml9iLnWukIuRa6a49bJbf2KrMiEFquKQEJ71trSIb5VtVqa/3K52Sn1ZOEui0USjdHt6SiTU4vwHR90HKgLIuPsS6FSWh76ECsj12jLatPfuam3ozWxeiwUMQxwSc0n2bNCK6l0KLJeNL7muFcIL5UieyCiGOo/VJsuUVHsh7DYDAWw2QMBDIAH2AQGef1ESdnciUItx+mRW/8yKydfSyL+5R7HKXNgP/AEnG+Hqoyy5uS212O1L5sBf6Tj8AfLn2o633EdrinEHhVJqOziT+Ibn9MNfub/iKLlj7S7HmFXN9oSf7Gcrdjcs+3JzanPoubseoyVzYX7Hj6KbIXQk4SSUl4PZa58JJd9FxHh7Vq2S+5A6lvCcid0mktNko8DvfeSX7GOtNut8Oy3hpE/o4r+UR4LS8ZSrk96Y8r5eJVs6T1Brz8l46U2/lCuyvKq2mnso4yoyw318HmsLPsxLO7cN9hctU+XrsTGVMpcvRMCGDn131qSaewNRXmNhzdSILuerbCxSJbKl3JjbOktkG2Mi+5nLK6WQtMZJdhHzrfLoXgCXgSJsICQeQIDWwZOIEdMTTL0iEu4NKuUXKWgVFLixcrNEUvY0Vxj7L+hYOfyNjVM32i/6HUSXsiRqYjlfpbH/KS/RWPu0josptbS6Nl1BmWA/M0S/RVr6plc5S/wAT/qV7b7k8fSNPo40e8k/3Dnxodkn+xlEy7VqeVVH6YP8AoQea/wCWH9TOxEuVFzzLX2UUVvJuf87X4IMCboOeyT05t/uXuWlooj3JR7GasT3tkZ2OKH4ERWeSssfRaQ44yXWbNK7FNhUU2uEVpIqre0K4VX0mhfFktkIjIJJ7J60iMCciCDIPqSZFlFE6+vQjGElNfkukKP1Io0aYaZJDAhpj0SACOgJABEOpIQNF1AkILpVPuRJT7kSIBx+pCGu4Hs6vmwI/6Tg8OtVHFJb6JvR3cX/6fD/SeUy+mVPX+I65XWke2lGq+Pz6aILHxof4TgY9k/Rj88v6lN1k+vzy/qOxt2OJWY9VXTRbicRo9CO5rseSunKT6yb/ACyvb9zNzo9nLimLD+aJRbxvGUWlJHkw8DvR2q+MRhfKTT0+2jNkcTdmTGyK6ROaBO1HQy+KTyYcmuVHPAZN7VZRkW0PdcmtgR10AbH/2Q==" alt="Samir palestrando" class="about-speaker">
+          <div class="about-speaker-caption">Congresso Saúde Estética · Apresentação do 1° Peeling Azelaico em Pasta Anidra</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="fade-up">
+          <span class="section-tag" style="color:var(--teal)">Sobre</span>
+          <h2 class="section-title">De pesquisador CNPq a<br>autoridade independente em P&D cosmético</h2>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s">
+          <p>Farmacêutico pela Universidade São Francisco, com <strong>Iniciação Científica PROBAICITExt</strong> no Laboratório de Ciências da Saúde sob orientação da Dra. Iara Tescarollo. <strong>Pesquisador bolsista CNPq vinculado à UNICAMP</strong> desde 2022, com foco em fatores de crescimento aplicados à dermatologia e publicação peer-reviewed em fotoproteção para peles negras (DOI: 10.24933/rep.v6i2.281).</p>
+          <p>Coordenador de P&D do maior grupo magistral do Brasil durante cinco anos, professor titular de 8 dos 10 módulos da Escola de Formuladores do ICosmetologia e <strong>co-organizador do 1° Simpósio de Peelings Químicos do Brasil (2022)</strong>. Criador do 1° peeling de ácido azelaico em pasta anidra do mundo, com resultados Visia® validados em estudo pré-clínico, e da técnica Fenol FREE apresentada no 20° Congresso Consulfarma.</p>
+          <p>Delegado técnico oficial na <strong>In-Cosmetics Global Paris 2025</strong>, com acesso in loco às instalações da Sederma e Lucas Meyer Cosmetics. Líder de missões internacionais com grupos de alunos e profissionais de saúde em três continentes — Europa (Paris e Amsterdam) e Ásia (Japão) — conectando o mercado brasileiro às fronteiras globais da cosmética funcional.</p>
+        </div>
+        <div class="check-grid fade-up" style="transition-delay:0.15s">
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> P&D Industrial Grau 1 e 2</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> 6 anos em P&D Magistral</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Private label e marcas próprias</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Dossiês farmacotécnicos com DOI</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Peptídeos e estética regenerativa</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Nanotecnologia farmacêutica</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Fotoproteção inclusiva</div>
+          <div class="check-item"><svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="var(--teal)" stroke-width="1.4" fill="none"/><polyline points="5,8 7.2,10.5 11.2,5.5" stroke="var(--teal)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Speaker internacional</div>
+        </div>
+        <div class="quote-box fade-up" style="transition-delay:0.2s">
+          <p class="quote-text">"Feliz aquele que transfere o que sabe e aprende o que ensina"</p>
+          <span style="font-size:11.5px;color:var(--muted);letter-spacing:0.5px">— Cora Coralina</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DUAL EXPERTISE ═══ -->
+<section class="section dual" id="expertise">
+  <svg class="mol-bg" xmlns="http://www.w3.org/2000/svg" style="opacity:0.04">
+    <defs><pattern id="mol2" width="140" height="140" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="2" fill="#fff"/><circle cx="70" cy="34" r="1.5" fill="#fff"/>
+      <circle cx="128" cy="18" r="2" fill="#fff"/><circle cx="42" cy="82" r="1.5" fill="#fff"/>
+      <line x1="12" y1="12" x2="70" y2="34" stroke="#fff" stroke-width="0.4"/>
+      <line x1="70" y1="34" x2="128" y2="18" stroke="#fff" stroke-width="0.4"/>
+    </pattern></defs><rect width="100%" height="100%" fill="url(#mol2)"/>
+  </svg>
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper-light)">Expertise Dual</span>
+      <h2 class="section-title light">P&D Industrial e P&D Magistral</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.5)">Duas frentes de atuação complementares — da bancada industrial ao balcão magistral. Um perfil raro no mercado brasileiro.</p>
+    </div>
+    <div class="dual-grid">
+      <div class="dual-card fade-up">
+        <span class="dual-badge">Grau 1 e 2 · Industrial</span>
+        <h3 class="dual-title">P&D para Indústrias e Marcas</h3>
+        <div class="dual-years">Desenvolvimento cosmético industrial</div>
+        <p class="dual-desc">Pesquisa, desenvolvimento e formulação para indústrias de insumos dermatológicos, laboratórios cosméticos, embalagens farmacêuticas e marcas private label. Mais de 20 indústrias cosméticas atendidas e dezenas de marcas independentes com produtos lançados no mercado nacional.</p>
+        <div class="dual-list">
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Indústrias de insumos cosméticos — desenvolvimento de matérias-primas ativas, avaliação de claims, estabilidade e protocolos de eficácia</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Laboratórios de embalagens — compatibilidade embalagem-formulação, bisnagas de alumínio, frascos airless e envases para ativos fotossensíveis</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Marcas cosméticas private label — criação de linhas dermocosméticas completas do briefing à fórmula finalizada</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Players do setor de beleza e saúde — dossiês técnicos, bulas e guias de prescrição para grandes players nacionais</div>
+        </div>
+      </div>
+      <div class="dual-card fade-up" style="transition-delay:0.1s">
+        <span class="dual-badge">6 anos · Magistral</span>
+        <h3 class="dual-title">P&D para Farmácias de Manipulação</h3>
+        <div class="dual-years">Suporte técnico e reformulação de portfólios</div>
+        <p class="dual-desc">Seis anos de experiência em P&D magistral com ênfase em reformulação de bases-padrão, auditoria técnica de manipulados, padronização de controle de qualidade e treinamento de equipes de P&D em redes magistrais de alto volume. Coordenador de P&D do maior grupo magistral do Brasil por cinco anos.</p>
+        <div class="dual-list">
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Reformulação de bases magistrais — 20+ veículos dermatológicos mapeados com pH/pKa de 17 ativos</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Auditoria técnica de manipulados — padronização de protocolos de controle de qualidade</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Treinamento de equipes de P&D — capacitação técnica presencial e online para farmácias magistrais</div>
+          <div class="dual-list-item"><svg class="dual-list-icon" width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Protocolos prescritivos — peelings químicos, peptídeos, fatores de crescimento e PDRN com concentrações validadas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MISSIONS INTERNATIONAL ═══ -->
+<section class="section missions" id="missions">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper)">Missões Internacionais</span>
+      <h2 class="section-title">Três continentes. Uma missão técnica.</h2>
+      <p class="section-desc">Líder de imersões internacionais com grupos de alunos e profissionais de saúde. Acesso in loco às indústrias de ingredientes mais avançadas do mundo.</p>
+    </div>
+    <div class="missions-grid">
+      <div class="mission-card fade-up">
+        <div class="mission-visual mission-paris">
+          <span class="mission-flag">PARIS</span>
+          <span class="mission-year">2025</span>
+        </div>
+        <div class="mission-content">
+          <div class="mission-location">França · Europa</div>
+          <h3 class="mission-title">In-Cosmetics Global 2025</h3>
+          <p class="mission-desc">Delegado Técnico Oficial do ICosmetologia. Visitas técnicas in loco às instalações da Sederma e Lucas Meyer Cosmetics — fabricantes dos ingredientes mais inovadores do mundo em peptídeos biomiméticos, fotoproteção e ativos regenerativos. Acesso a lançamentos antes da publicação acadêmica.</p>
+          <div class="mission-tags">
+            <span class="mission-tag">Sederma</span>
+            <span class="mission-tag">Lucas Meyer</span>
+            <span class="mission-tag">Peptídeos Gen. 5</span>
+            <span class="mission-tag">Pré-mercado BR</span>
+          </div>
+        </div>
+      </div>
+      <div class="mission-card fade-up" style="transition-delay:0.1s">
+        <div class="mission-visual mission-amsterdam">
+          <span class="mission-flag">AMSTERDAM</span>
+          <span class="mission-year">2025</span>
+        </div>
+        <div class="mission-content">
+          <div class="mission-location">Holanda · Europa</div>
+          <h3 class="mission-title">Missão Técnica Europeia</h3>
+          <p class="mission-desc">Líder de grupo de alunos brasileiros no epicentro da inovação cosmética europeia. Acesso direto a drug delivery avançado, ativos biomiméticos de última geração, ingredientes naturais de alta performance e tendências de formulação para os próximos anos.</p>
+          <div class="mission-tags">
+            <span class="mission-tag">Drug Delivery</span>
+            <span class="mission-tag">Biomiméticos</span>
+            <span class="mission-tag">Naturals Premium</span>
+            <span class="mission-tag">Tendências 2026-2027</span>
+          </div>
+        </div>
+      </div>
+      <div class="mission-card fade-up" style="transition-delay:0.2s">
+        <div class="mission-visual mission-japan">
+          <span class="mission-flag">JAPÃO</span>
+          <span class="mission-year">2026</span>
+        </div>
+        <div class="mission-content">
+          <div class="mission-location">Tokyo · Ásia</div>
+          <h3 class="mission-title">Missão Técnica Internacional</h3>
+          <p class="mission-desc">Professor-líder de imersão técnica na fronteira mais avançada da cosmética funcional mundial. Biofermentação japonesa, ácido hialurônico ultra-puro, formulações water-essence ultraleves, adaptógenos e tecnologia de skincare funcional sem equivalente no mercado brasileiro.</p>
+          <div class="mission-tags">
+            <span class="mission-tag">Biofermentação</span>
+            <span class="mission-tag">HA Ultra-puro</span>
+            <span class="mission-tag">Water-essence</span>
+            <span class="mission-tag">Exclusivo no Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCIENCE ═══ -->
+<section class="section science" id="science">
+  <svg class="mol-bg" xmlns="http://www.w3.org/2000/svg">
+    <defs><pattern id="mol3" width="140" height="140" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="2" fill="#fff"/><circle cx="70" cy="34" r="1.5" fill="#fff"/>
+      <circle cx="128" cy="18" r="2" fill="#fff"/><circle cx="42" cy="82" r="1.5" fill="#fff"/>
+      <line x1="12" y1="12" x2="70" y2="34" stroke="#fff" stroke-width="0.4"/>
+    </pattern></defs><rect width="100%" height="100%" fill="url(#mol3)"/>
+  </svg>
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper-light)">Evidência Científica</span>
+      <h2 class="section-title light">Inovação comprovada, não promessa</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.5)">Publicação peer-reviewed indexada com DOI verificável. Inovação mundial documentada em estudo pré-clínico Visia®.</p>
+    </div>
+    <div class="science-grid">
+      <div class="science-card fade-up">
+        <div class="science-card-tag">
+          <div class="science-card-tag-icon science-icon-peer">P</div>
+          <span class="science-card-tag-text" style="color:var(--teal-light)">Publicação Peer-Reviewed</span>
+        </div>
+        <h3>Delineamento Experimental de Protetor Solar para Peles Negras</h3>
+        <p class="science-card-meta">Cerveira, Bratfich & Tescarollo · Revista Ensaios Pioneiros, v.6, n.2, p.46–61, 2023 · Qualis B3 · Licença CC BY 4.0</p>
+        <p style="font-size:13.5px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:22px">Único trabalho no Brasil com design experimental específico para fototipos V–VI, com parâmetros de fotoproteção validados laboratorialmente para peles negras.</p>
+        <div class="science-metrics">
+          <div class="metric"><span class="metric-num" style="color:var(--copper-light)">FPS 30,5</span><div class="metric-label">Comprovado</div></div>
+          <div class="metric"><span class="metric-num" style="color:var(--copper-light)">FPUVA 10,3</span><div class="metric-label">Validado</div></div>
+          <div class="metric"><span class="metric-num" style="color:var(--copper-light)">λc 378,3</span><div class="metric-label">Crítico (nm)</div></div>
+        </div>
+        <a href="https://doi.org/10.24933/rep.v6i2.281" target="_blank" class="science-btn">Ler o Paper completo → DOI: 10.24933/rep.v6i2.281</a>
+      </div>
+      <div class="science-card fade-up" style="transition-delay:0.1s">
+        <div class="science-card-tag">
+          <div class="science-card-tag-icon science-icon-inn">1°</div>
+          <span class="science-card-tag-text" style="color:var(--copper-light)">Inovação Mundial</span>
+        </div>
+        <h3>1° Peeling de Ácido Azelaico em Pasta Anidra do Mundo</h3>
+        <p class="science-card-meta">Apresentado no Congresso Saúde Estética · Estudo pré-clínico em voluntárias · Sistema Visia® com imagens padronizadas · Aplicação única, avaliação T0–T15</p>
+        <div class="visia-grid">
+          <div class="visia-card"><div class="visia-num" style="color:var(--copper-light)">30,5%</div><div class="visia-label">Pigmentação marrom</div></div>
+          <div class="visia-card"><div class="visia-num" style="color:var(--teal-light)">21,1%</div><div class="visia-label">Textura cutânea</div></div>
+          <div class="visia-card"><div class="visia-num" style="color:#fff">19,9%</div><div class="visia-label">Manchas UV</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPEAKER ═══ -->
+<section class="section speaker">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--teal)">Palestrante & Speaker</span>
+      <h2 class="section-title">Onde levo a ciência ao palco</h2>
+      <p class="section-desc">Sete edições do maior congresso magistral do Brasil, feiras internacionais e seminários técnicos em todo o país.</p>
+    </div>
+    <div class="speaker-layout">
+      <div class="speaker-photo fade-up">
+        <img src="data:image/jpeg;base64,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" alt="Samir em palestra">
+        <div class="speaker-photo-badge">
+          <div class="speaker-photo-badge-title">Congresso Saúde Estética</div>
+          <div class="speaker-photo-badge-sub">Apresentação inédita — 1° Peeling Azelaico</div>
+        </div>
+      </div>
+      <div class="speaker-list">
+        <div class="speaker-item fade-up">
+          <div class="speaker-item-year">2025</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">In-Cosmetics Global Paris</div>
+            <div class="speaker-item-desc">Delegado Técnico Oficial · Representando ICosmetologia Brasil · Sederma e Lucas Meyer Cosmetics</div>
+          </div>
+        </div>
+        <div class="speaker-item fade-up" style="transition-delay:0.08s">
+          <div class="speaker-item-year">2025</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">20° Congresso Consulfarma</div>
+            <div class="speaker-item-desc">Apresentação da Técnica Fenol FREE · Curso de Formulações e Protocolos para Lasers</div>
+          </div>
+        </div>
+        <div class="speaker-item fade-up" style="transition-delay:0.16s">
+          <div class="speaker-item-year">2024</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">Congresso Saúde Estética</div>
+            <div class="speaker-item-desc">Apresentação mundial do 1° Peeling de Ácido Azelaico em Pasta Anidra · Estudo Visia®</div>
+          </div>
+        </div>
+        <div class="speaker-item fade-up" style="transition-delay:0.24s">
+          <div class="speaker-item-year">16°-19°</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">Congressos Consulfarma</div>
+            <div class="speaker-item-desc">Speaker em 4 edições consecutivas · Cosmetologia avançada, séruns, peelings e tricologia</div>
+          </div>
+        </div>
+        <div class="speaker-item fade-up" style="transition-delay:0.32s">
+          <div class="speaker-item-year">2023</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">Seminários Científicos Regionais</div>
+            <div class="speaker-item-desc">Cuiabá, Maringá, Goiânia, Espírito Santo · Peelings químicos e tratamento de melasma</div>
+          </div>
+        </div>
+        <div class="speaker-item fade-up" style="transition-delay:0.4s">
+          <div class="speaker-item-year">2022</div>
+          <div class="speaker-item-body">
+            <div class="speaker-item-title">1° Simpósio de Peelings Químicos do Brasil</div>
+            <div class="speaker-item-desc">Co-Organizador · Evento inaugural sobre peelings químicos magistrais</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONSULTORIA ═══ -->
+<section class="section consult" id="consultoria">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper)">Consultoria</span>
+      <h2 class="section-title">Ciência aplicada ao seu laboratório</h2>
+      <p class="section-desc">Quatro frentes de atuação — do diagnóstico pontual ao desenvolvimento industrial completo. Cada projeto é único.</p>
+    </div>
+    <div class="consult-grid">
+      <div class="tier-card fade-up">
+        <div class="tier-icon" style="background:var(--teal-glow);color:var(--teal)">D</div>
+        <h3 class="tier-name">Diagnóstico Técnico</h3>
+        <p class="tier-desc">Análise completa do P&D da sua farmácia ou marca com recomendações estratégicas em 30 dias.</p>
+        <div class="tier-list">
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Auditoria de bases e manipulados</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Relatório com gaps identificados</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Checklist de melhorias prioritárias</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Reunião devolutiva (90min)</div>
+        </div>
+        <a href="https://wa.me/5562999999999" target="_blank" class="tier-btn secondary">Solicitar Diagnóstico</a>
+      </div>
+      <div class="tier-card featured fade-up" style="transition-delay:0.08s">
+        <div class="tier-badge">Mais procurado</div>
+        <div class="tier-icon" style="background:var(--copper-glow);color:var(--copper)">C</div>
+        <h3 class="tier-name">Consultoria Magistral Completa</h3>
+        <p class="tier-desc">Reformulação de portfólio, dossiês técnicos e treinamento de equipe para farmácias magistrais.</p>
+        <div class="tier-list">
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Diagnóstico técnico completo</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Reformulação de 5–10 fórmulas-chave</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Dossiê farmacotécnico com DOIs</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Treinamento de equipe</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Suporte 30 dias pós-entrega</div>
+        </div>
+        <a href="https://wa.me/5562999999999" target="_blank" class="tier-btn primary">Falar sobre Consultoria</a>
+      </div>
+      <div class="tier-card fade-up" style="transition-delay:0.16s">
+        <div class="tier-icon" style="background:rgba(11,29,53,0.08);color:var(--navy)">I</div>
+        <h3 class="tier-name">P&D Industrial</h3>
+        <p class="tier-desc">Desenvolvimento cosmético grau 1 e 2 para indústrias de insumos, marcas e laboratórios.</p>
+        <div class="tier-list">
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Briefing → fórmula finalizada</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Private label e marcas próprias</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Compatibilidade embalagem-formulação</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--navy)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Estudos de estabilidade e claims</div>
+        </div>
+        <a href="https://wa.me/5562999999999" target="_blank" class="tier-btn secondary">Solicitar Proposta</a>
+      </div>
+      <div class="tier-card fade-up" style="transition-delay:0.24s">
+        <div class="tier-icon" style="background:rgba(10,143,158,0.12);color:var(--teal)">M</div>
+        <h3 class="tier-name">Missões Internacionais</h3>
+        <p class="tier-desc">Imersões técnicas lideradas por mim em Paris, Amsterdam e Japão com grupos fechados.</p>
+        <div class="tier-list">
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Acesso in loco a indústrias de ingredientes</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Sederma, Lucas Meyer e outras</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Biofermentação e water-essence (Japão)</div>
+          <div class="tier-item"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7 6,10 11,4" stroke="var(--teal)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Grupos fechados com alunos e profissionais</div>
+        </div>
+        <a href="https://wa.me/5562999999999" target="_blank" class="tier-btn secondary">Próxima Missão</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INDUSTRIES ═══ -->
+<section class="section industries">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper-light)">Portfólio Industrial</span>
+      <h2 class="section-title light">Atendimento a grandes players do setor</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.5)">Mais de duas décadas de relações com indústrias, marcas e redes — um portfólio construído pela qualidade técnica e discrição profissional.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="ind-card fade-up">
+        <div class="ind-card-num">20+</div>
+        <div class="ind-card-title">Indústrias Cosméticas</div>
+        <div class="ind-card-desc">Atendimento técnico a indústrias de insumos dermatológicos, laboratórios cosméticos e embalagens farmacêuticas no Brasil.</div>
+      </div>
+      <div class="ind-card fade-up" style="transition-delay:0.08s">
+        <div class="ind-card-num">40+</div>
+        <div class="ind-card-title">Marcas Independentes</div>
+        <div class="ind-card-desc">Dezenas de marcas cosméticas industriais independentes com produtos desenvolvidos e lançados no mercado nacional.</div>
+      </div>
+      <div class="ind-card fade-up" style="transition-delay:0.16s">
+        <div class="ind-card-num">9</div>
+        <div class="ind-card-title">Ativos Nano Documentados</div>
+        <div class="ind-card-desc">Nanoencapsulamento farmacêutico de Retinol, Tranexâmico, Kojico, Q10, Vitamina C, PDRN, Peptídeos, Cisteamina e Arbutina.</div>
+      </div>
+      <div class="ind-card fade-up" style="transition-delay:0.24s">
+        <div class="ind-card-num">200+</div>
+        <div class="ind-card-title">Páginas Originais</div>
+        <div class="ind-card-desc">Material técnico-científico autoral produzido em formulários, guias, dossiês e compêndios para o setor magistral.</div>
+      </div>
+      <div class="ind-card fade-up" style="transition-delay:0.32s">
+        <div class="ind-card-num">50+</div>
+        <div class="ind-card-title">Formulações Magistrais</div>
+        <div class="ind-card-desc">Fórmulas magistrais documentadas com pH, embalagem, veículo, concentração, modo de uso e prazo de validade.</div>
+      </div>
+      <div class="ind-card fade-up" style="transition-delay:0.4s">
+        <div class="ind-card-num">17</div>
+        <div class="ind-card-title">Ativos com pH/pKa</div>
+        <div class="ind-card-desc">Mapa de incompatibilidades dos principais ativos — retinoides, AHAs, vitamina C, hidroquinona — para orientar prescrição segura.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS WITH COVERS ═══ -->
+<section class="section products" id="products">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--teal)">Biblioteca Técnica</span>
+      <h2 class="section-title">Cursos, eBooks & Formulários</h2>
+      <p class="section-desc">Doze materiais clínico-prescritivos com rigor científico. Cada obra é um compêndio autoral pronto para aplicação em consultório ou laboratório.</p>
+    </div>
+    <div class="tabs fade-up">
+      <button class="tab-btn active" onclick="filterProducts('all',event)">Todos (12)</button>
+      <button class="tab-btn" onclick="filterProducts('ebook',event)">eBooks & Guias</button>
+      <button class="tab-btn" onclick="filterProducts('formulario',event)">Formulários</button>
+      <button class="tab-btn" onclick="filterProducts('curso',event)">Cursos</button>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ AUTHORITY / BLOG ═══ -->
+<section class="section authority" id="authority">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper)">Conteúdos de Autoridade</span>
+      <h2 class="section-title">Lâminas Técnicas & Artigos</h2>
+      <p class="section-desc">Biblioteca editorial com aprofundamento técnico em peptídeos, peelings, nanotecnologia e protocolos clínicos — atualizada periodicamente.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card fade-up">
+        <div class="blog-cover b-ghkcu">
+          <div class="blog-cover-formula">GHK-Cu</div>
+          <span class="blog-cover-label">Lâmina Técnica #01</span>
+          <h3 class="blog-cover-title">Peptídeo GHK-Cu<br>em Dermatologia</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Peptídeos</span><span class="blog-meta-dot">·</span><span>12 min</span></div>
+          <h4 class="blog-title">Peptídeo GHK-Cu: mecanismos moleculares e protocolos magistrais</h4>
+          <p class="blog-excerpt">Revisão técnica do tripeptídeo Gly-His-Lys quelado com cobre e suas aplicações em firmeza cutânea, regeneração e reparo tecidual. Formulações compatíveis e incompatibilidades químicas.</p>
+          <a href="#" class="blog-link">Ler lâmina técnica →</a>
+        </div>
+      </article>
+      <article class="blog-card fade-up" style="transition-delay:0.08s">
+        <div class="blog-cover b-fenol">
+          <div class="blog-cover-formula">FREE</div>
+          <span class="blog-cover-label">Lâmina Técnica #02</span>
+          <h3 class="blog-cover-title">Técnica<br>Fenol FREE</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Peelings</span><span class="blog-meta-dot">·</span><span>15 min</span></div>
+          <h4 class="blog-title">Fenol FREE: profundidade com segurança</h4>
+          <p class="blog-excerpt">Técnica autoral criada e apresentada no 20° Congresso Consulfarma. Combinação Glicólico 20–70%, Mandélico 45%, Retinóico 5% e Azelaico para profundidade de peeling fenol sem os riscos.</p>
+          <a href="#" class="blog-link">Ler lâmina técnica →</a>
+        </div>
+      </article>
+      <article class="blog-card fade-up" style="transition-delay:0.16s">
+        <div class="blog-cover b-nano">
+          <div class="blog-cover-formula">NANO</div>
+          <span class="blog-cover-label">Lâmina Técnica #03</span>
+          <h3 class="blog-cover-title">Nanoencapsulamento<br>Farmacêutico</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Nanotecnologia</span><span class="blog-meta-dot">·</span><span>10 min</span></div>
+          <h4 class="blog-title">9 ativos Nano: aumento de biodisponibilidade</h4>
+          <p class="blog-excerpt">Retinol, Tranexâmico, Kojico, Q10, Vitamina C, PDRN, Peptídeos, Cisteamina e Arbutina em versão nano. Drug delivery transdérmico com redução de irritação e aumento de eficácia.</p>
+          <a href="#" class="blog-link">Ler lâmina técnica →</a>
+        </div>
+      </article>
+      <article class="blog-card fade-up" style="transition-delay:0.24s">
+        <div class="blog-cover b-fotoprot">
+          <div class="blog-cover-formula">UV</div>
+          <span class="blog-cover-label">Artigo Peer-Reviewed</span>
+          <h3 class="blog-cover-title">Fotoproteção<br>Inclusiva</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Publicação DOI</span><span class="blog-meta-dot">·</span><span>Ensaios Pioneiros</span></div>
+          <h4 class="blog-title">Protetor Solar para Peles Negras — Fitzpatrick V–VI</h4>
+          <p class="blog-excerpt">FPS 30,5 · FPUVA 10,3 · λc 378,3nm. Único trabalho no Brasil com design experimental validado laboratorialmente para peles negras. Pigmentos microencapsulados de óxido de ferro e ZnO.</p>
+          <a href="https://doi.org/10.24933/rep.v6i2.281" target="_blank" class="blog-link">Acessar DOI →</a>
+        </div>
+      </article>
+      <article class="blog-card fade-up" style="transition-delay:0.32s">
+        <div class="blog-cover b-melasma">
+          <div class="blog-cover-formula">360°</div>
+          <span class="blog-cover-label">Lâmina Técnica #04</span>
+          <h3 class="blog-cover-title">Melasma<br>Multimodal</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Protocolos</span><span class="blog-meta-dot">·</span><span>18 min</span></div>
+          <h4 class="blog-title">Abordagem multimodal para fototipos III–VI</h4>
+          <p class="blog-excerpt">8 protocolos documentados com estratégia fototipo-específica. Home care HQ e HQ-free, pré e pós-peeling, microagulhamento, lasers e combinados. Despigmentantes TXA, Arbutina, Kojico, Niacinamida e Cisteamina.</p>
+          <a href="#" class="blog-link">Ler lâmina técnica →</a>
+        </div>
+      </article>
+      <article class="blog-card fade-up" style="transition-delay:0.4s">
+        <div class="blog-cover b-growth">
+          <div class="blog-cover-formula">TGF-β</div>
+          <span class="blog-cover-label">Lâmina Técnica #05</span>
+          <h3 class="blog-cover-title">Fatores de<br>Crescimento</h3>
+        </div>
+        <div class="blog-info">
+          <div class="blog-meta"><span>Regenerativa</span><span class="blog-meta-dot">·</span><span>14 min</span></div>
+          <h4 class="blog-title">TGF-β, EGF, FGF e PDGF na dermatologia magistral</h4>
+          <p class="blog-excerpt">Pesquisa CNPq aplicada: estabilidade, veículos anidros, conservação e protocolos pós-procedimento (laser CO2, microagulhamento). 15+ formulações completas com concentrações, pH e embalagem validados.</p>
+          <a href="#" class="blog-link">Ler lâmina técnica →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag" style="color:var(--copper)">Contato</span>
+      <h2 class="section-title">Vamos trabalhar juntos?</h2>
+      <p class="section-desc">Preencha o formulário ou fale direto pelo WhatsApp. Retorno em até 24 horas úteis.</p>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s">
+      <div class="contact-grid">
+        <input type="text" class="form-input" placeholder="Nome">
+        <input type="email" class="form-input" placeholder="E-mail">
+      </div>
+      <select class="form-input" style="margin-top:14px">
+        <option value="">Interesse principal</option>
+        <option value="consult-magistral">Consultoria Magistral Completa</option>
+        <option value="pd-industrial">P&D Industrial — Indústrias e Marcas</option>
+        <option value="diagnostico">Diagnóstico Técnico</option>
+        <option value="missao">Missões Internacionais</option>
+        <option value="ebook">eBooks, Formulários e Cursos</option>
+        <option value="palestra">Convite para Palestra</option>
+      </select>
+      <textarea class="form-input" placeholder="Descreva seu projeto ou dúvida" rows="4" style="margin-top:14px;resize:vertical"></textarea>
+      <div class="btn-row">
+        <button class="btn-submit">Enviar Mensagem</button>
+        <a href="https://wa.me/5562999999999" target="_blank" class="btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <div class="footer-brand-icon">Cf</div>
+          <span class="footer-brand-name">Clube de Fórmulas</span>
+        </div>
+        <p>Prof. Samir Tannuri Cerveira<br>Pesquisador · Consultor Industrial · Speaker<br>Metapharma · CNPJ 00.246.124/0001-51<br>Goiânia — GO · Brasil</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <div class="footer-col-title">Social & Links</div>
+          <a href="https://instagram.com/samir_farma" target="_blank" class="footer-link">Instagram · 25K+</a>
+          <a href="https://linkedin.com/in/samir-tannuri-58480816b" target="_blank" class="footer-link">LinkedIn · 7,7K</a>
+          <a href="https://researchgate.net/profile/Samir-Cerveira" target="_blank" class="footer-link">ResearchGate</a>
+          <a href="https://pay.hotmart.com/A105091762I" target="_blank" class="footer-link">Hotmart</a>
+          <a href="#" class="footer-link">Lattes CNPq</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Científico</div>
+          <a href="https://doi.org/10.24933/rep.v6i2.281" target="_blank" class="footer-link">DOI: 10.24933/rep.v6i2.281</a>
+          <span class="footer-link">Lattes ID: K2699008D8</span>
+          <span class="footer-link">Revista Ensaios Pioneiros v.6 n.2</span>
+          <span class="footer-link">CNPq Bolsista · UNICAMP</span>
+        </div>
+        <div>
+          <div class="footer-col-title">Navegação</div>
+          <a href="#about" class="footer-link">Sobre</a>
+          <a href="#expertise" class="footer-link">Expertise P&D</a>
+          <a href="#missions" class="footer-link">Missões Internacionais</a>
+          <a href="/consultoria-magistral.html" class="footer-link">Consultoria Magistral</a>
+          <a href="/pd-industrial.html" class="footer-link">P&amp;D Industrial</a>
+          <a href="#products" class="footer-link">Materiais</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Clube de Fórmulas · Metapharma · Todos os direitos reservados.</span>
+      <span class="footer-copy">@samir_farma · Abril 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const products = [
+  {cat:"ebook",tag:"eBook",title:"Dermatologia Regenerativa Aplicada",cover:"cover-regen",ornament:"RG",edition:"Manual Hotmart 2026",desc:"Peptídeos biomiméticos, PDRN, exossomos e 27 prescrições magistrais. 60+ páginas.",price:"R$ 39",link:"https://pay.hotmart.com/A105091762I",hot:true},
+  {cat:"formulario",tag:"Formulário",title:"Melasma — 4 Volumes",cover:"cover-melasma",ornament:"M",edition:"Volume Completo",desc:"Patofisiologia, home care, peelings, microagulhamento e nutracêuticos.",price:"Consulte"},
+  {cat:"formulario",tag:"Formulário",title:"Peptídeos 2026",cover:"cover-peptides",ornament:"P",edition:"48 páginas · 2026",desc:"TGF-β, EGF, FGF, PDRN, GHK-Cu. 13 lâminas técnicas A4.",price:"Consulte"},
+  {cat:"ebook",tag:"eBook",title:"Cicatrização & Reparo",cover:"cover-cicatriz",ornament:"C",edition:"9 capítulos",desc:"Protocolos clínicos e prescrições magistrais. Vancouver + DOI.",price:"Consulte"},
+  {cat:"formulario",tag:"Guia",title:"Veículos Dermatológicos",cover:"cover-veiculos",ornament:"V",edition:"100+ páginas",desc:"20 bases magistrais, 15 capítulos farmacotécnicos. pH/pKa de 17 ativos.",price:"Consulte"},
+  {cat:"formulario",tag:"Compêndio",title:"Bases Cosméticas",cover:"cover-bases",ornament:"B",edition:"20 fórmulas",desc:"Bases dermatológicas com especificações técnicas completas.",price:"Consulte"},
+  {cat:"formulario",tag:"Guia",title:"Guia Terapêutico",cover:"cover-terapeutico",ornament:"G",edition:"Dermatológico Magistral",desc:"Acne, rosácea, psoríase, eczemas, alopecias, onicomicoses e discromias.",price:"Consulte"},
+  {cat:"formulario",tag:"Formulário",title:"Clareadores & Antioxidantes",cover:"cover-clareadores",ornament:"Cl",edition:"2ª Edição",desc:"Ativos clareadores cutâneos e antioxidantes com prescrições magistrais.",price:"Consulte"},
+  {cat:"formulario",tag:"Formulário",title:"Fatores de Crescimento",cover:"cover-growth",ornament:"FC",edition:"Protocolo CNPq",desc:"EGF, FGF, VEGF, PDGF e fatores lipossomados. 15+ formulações.",price:"Consulte"},
+  {cat:"ebook",tag:"Guia",title:"Atualização Dermatologia",cover:"cover-atual",ornament:"A",edition:"Edição 2025",desc:"Novos ativos, tendências e protocolos dermatológicos atualizados.",price:"Consulte"},
+  {cat:"curso",tag:"Curso EAD",title:"MELASMA ZERO 360°",cover:"cover-curso",ornament:"360",edition:"Curso ao vivo",desc:"Peeling ATA GREEN™ e protocolos exclusivos multimodais.",price:"Em breve"},
+  {cat:"formulario",tag:"Lâminas",title:"Protocolos Peelings",cover:"cover-peelings",ornament:"Pe",edition:"Fenol FREE",desc:"Peelings químicos exclusivos com concentrações, pH e técnicas.",price:"Consulte"}
+];
+
+function renderProducts(filter) {
+  const grid = document.getElementById('productGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <article class="product-card" ${p.link ? `onclick="window.open('${p.link}','_blank')"` : ''}>
+      ${p.hot ? '<div class="product-hot-dot"></div>' : ''}
+      <div class="product-cover ${p.cover}">
+        <div class="product-cover-ornament">${p.ornament}</div>
+        <div class="product-cover-top">
+          <span class="product-cover-brand">Clube de Fórmulas</span>
+          <span class="product-cover-year">2026</span>
+        </div>
+        <div class="product-cover-bottom">
+          <div class="product-cover-line"></div>
+          <div class="product-cover-category">${p.tag}</div>
+          <h3 class="product-cover-title">${p.title}</h3>
+          <div class="product-cover-author">Prof. Samir Tannuri · ${p.edition}</div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-info-top">
+          <span class="product-info-tag" style="background:${p.cat==='curso'?'rgba(10,143,158,0.1)':p.cat==='formulario'?'rgba(192,133,74,0.15)':'rgba(11,29,53,0.06)'};color:${p.cat==='curso'?'var(--teal)':p.cat==='formulario'?'var(--copper)':'var(--navy)'}">${p.tag}</span>
+          <span class="product-info-price">${p.price}</span>
+        </div>
+        <h4 class="product-info-title">${p.title}</h4>
+        <p class="product-info-desc">${p.desc}</p>
+        <div class="product-info-link">${p.link?'Comprar agora':'Saiba mais'} <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="6" x2="10" y2="6"/><polyline points="7,3 10,6 7,9"/></svg></div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function filterProducts(cat, ev) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  ev.target.classList.add('active');
+  renderProducts(cat);
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+renderProducts('all');
+</script>
+
+</body>
+</html>
